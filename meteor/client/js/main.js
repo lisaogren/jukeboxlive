@@ -14,7 +14,7 @@ events = EventManager({
  *  INIT SESSION
  * -----------------------------------------------------------------------------
  */
-// Session.set('nick', null);
+Session.set("currentPage", "home");
 // Session.set('login_error', "");
 
 
@@ -23,11 +23,23 @@ events = EventManager({
  *  ROUTING
  * -----------------------------------------------------------------------------
  */
-
-page("/", function() {
-	console.log("index page w00t");
+router = Router({
+	"/": "home",
+	"/calendar": "calendar",
+	"/about": "about",
+	"/contact": "contact"
 });
-page();
+
+
+
+Template.home.currentPage = function() {
+	return Session.get('currentPage') === "home";
+};
+
+Template.calendar.currentPage = function() {
+	return Session.get('currentPage') === "calendar";
+};
+
 
 
 /**

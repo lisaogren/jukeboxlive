@@ -19,8 +19,10 @@ Contains the title and login area
 	<div id="header">
 		<div class="ui-helper-clearfix">
 			<h1>
-				<div>Jukebox Live</div>
-				<div class="description">Super Alpha</div>
+				<a href="/">
+					<span>Jukebox Live</span>
+					<span class="description">Super Alpha</span>
+				</a>
 			</h1>
 			<div id="login-ctnr">
 				{{loginButtons align="right"}}
@@ -37,30 +39,32 @@ Main content area
 	<div id="content" class="ui-helper-clearfix">
 		<div id="menu-ctnr">
 			<ul id="menu">
-				<li><a href="/">Index</a></li>
+				<li><a href="/calendar">Calendar</a></li>
 				<li><a href="/about">About</a></li>
 				<li><a href="/contact">Contact</a></li>
 			</ul>
 		</div>
 		<div id="page-content">
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			{{> home}}
+
+			{{> calendar}}
 		</div>
 	</div>
+</template>
+
+<template name="home">
+	{{#if currentPage}}
+	
+	<h1>Home</h1>
+
+	{{/if}}
+</template>
+
+
+<template name="calendar">
+	{{#if currentPage}}
+
+	<h1>Calendar</h1>
+
+	{{/if}}
 </template>
