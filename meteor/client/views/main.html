@@ -1,0 +1,37 @@
+<head>
+	<title>Jukebox Live</title>
+</head>
+
+<body>
+	<div id="main">
+		{{> header}}
+		{{> content}}
+	</div>
+</body>
+
+
+<!--
+Header template
+Contains the title and login area
+-->
+<template name="header">
+	<div id="header">
+		<div class="ui-helper-clearfix">
+			<h1>
+				<div>Jukebox Live</div>
+				<div class="description">Super Alpha</div>
+			</h1>
+			<div id="login-ctnr">
+				{{loginButtons align="right"}}
+			</div>
+		</div>
+	</div>
+</template>
+
+
+<!--
+Main content area
+-->
+<template name="content">
+
+</template>
