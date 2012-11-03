@@ -56,7 +56,7 @@ Main content area
 
 <template name="home">
 {{#if currentPage}}
-	
+
 	<h1>Home</h1>
 
 	<ul>
@@ -75,7 +75,13 @@ Main content area
 <template name="vote">
 {{#if currentPage}}
 
-	<h1>Vote</h1>
+	<h1>Bands in top 10</h1>
+
+    <ul id="item-list">
+      {{#each bands}}
+        <li>{{text}}</li>
+      {{/each}}
+    </ul>
 
 {{/if}}
 </template>
@@ -94,7 +100,7 @@ Main content area
 
 <template name="about">
 {{#if currentPage}}
-	
+
 	<h1>About</h1>
 
 {{/if}}
