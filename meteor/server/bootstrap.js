@@ -27,4 +27,30 @@ Meteor.startup(function() {
 			}
 	    ];
 	// }
+	
+
+
+	if (Bands.find().count() === 0) {
+		// Bands
+		var bandsList = [
+			{ "name": "GMH", "description": "Melodic Punk Metal", "origin": "France" },
+			{ "name": "Rock'Ave", "description": "Rock'n'Roll Blues", "origin": "France" }
+		];
+
+		for (var i in bandsList) {
+			var bandId = Bands.insert(bandsList[i]);
+
+			var concertId = Concerts.insert({
+				"label": "Concert de " + bandsList[i].name,
+				"bandId": bandId
+			});
+
+			for (var j = 0; j < 10; j++) {
+				Songs.insert({
+					"name": "Song #" + j,
+					"concertId": concertId
+				});
+			}
+		}
+	}
 });
