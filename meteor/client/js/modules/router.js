@@ -62,15 +62,4 @@ Router.fn.init.prototype = Router.fn;
 
 
 
-Handlebars.registerHelper("currentPage", function(page, options) {
-	console.log("[helper:currentPage] Checking if page is " + page);
-
-	if (Session.get("currentPage") === page)
-		return options.fn(this);
-	else
-		return options.inverse(this);
-});
-
-
-
 })(window);
