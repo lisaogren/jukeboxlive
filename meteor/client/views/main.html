@@ -39,32 +39,63 @@ Main content area
 	<div id="content" class="ui-helper-clearfix">
 		<div id="menu-ctnr">
 			<ul id="menu">
+				<li><a href="/vote">Vote</a></li>
 				<li><a href="/calendar">Calendar</a></li>
 				<li><a href="/about">About</a></li>
-				<li><a href="/contact">Contact</a></li>
 			</ul>
 		</div>
 		<div id="page-content">
 			{{> home}}
-
+			{{> vote}}
 			{{> calendar}}
+			{{> about}}
 		</div>
 	</div>
 </template>
 
+
 <template name="home">
-	{{#if currentPage}}
+{{#if currentPage}}
 	
 	<h1>Home</h1>
 
-	{{/if}}
+	<ul>
+	{{#each songs}}
+		<li>
+			<strong>{{label}}</strong>
+		</li>
+	{{/each}}
+	</ul>
+
+{{/if}}
 </template>
 
 
+
+<template name="vote">
+{{#if currentPage}}
+
+	<h1>Vote</h1>
+
+{{/if}}
+</template>
+
+
+
 <template name="calendar">
-	{{#if currentPage}}
+{{#if currentPage}}
 
 	<h1>Calendar</h1>
 
-	{{/if}}
+{{/if}}
+</template>
+
+
+
+<template name="about">
+{{#if currentPage}}
+	
+	<h1>About</h1>
+
+{{/if}}
 </template>

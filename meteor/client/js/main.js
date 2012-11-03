@@ -1,15 +1,4 @@
 /**
- * Initialize the event manager
- * @type {EventManager}
- */
-events = EventManager({
-	success: function() {
-		console.log("[EventManager] Successfully loaded EventManager");
-	}
-});
-
-
-/**
  * -----------------------------------------------------------------------------
  *  INIT SESSION
  * -----------------------------------------------------------------------------
@@ -20,25 +9,40 @@ Session.set("currentPage", "home");
 
 /**
  * -----------------------------------------------------------------------------
+ * Initialize the event manager
+ * -----------------------------------------------------------------------------
+ */
+events = EventManager({
+	success: function() {
+		console.log("[EventManager] Successfully loaded EventManager");
+	}
+});
+
+
+
+/**
+ * -----------------------------------------------------------------------------
  *  ROUTING
  * -----------------------------------------------------------------------------
  */
 router = Router({
 	"/": "home",
+	"/vote": "vote",
 	"/calendar": "calendar",
-	"/about": "about",
-	"/contact": "contact"
+	"/about": "about"
 });
 
 
 
-Template.home.currentPage = function() {
-	return Session.get('currentPage') === "home";
-};
+/**
+ * -----------------------------------------------------------------------------
+ *  SUBSCRIPTIONS
+ * -----------------------------------------------------------------------------
+ */
+Meteor.subscribe('bands');
+Meteor.subscribe('concerts');
+Meteor.subscribe('songs');
 
-Template.calendar.currentPage = function() {
-	return Session.get('currentPage') === "calendar";
-};
 
 
 

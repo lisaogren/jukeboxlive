@@ -1,7 +1,9 @@
 /**
  * Publish the databases for use on client side
  */
-
+// Meteor.publish("users", function() {
+// 	return Meteor.users.find();
+// });
 
 
 
@@ -19,4 +21,12 @@ Meteor.publish("bands", function() {
  */
 Meteor.publish("concerts", function() {
 	return Concerts.find();
+});
+
+
+/**
+ * Publish songs
+ */
+Meteor.publish("songs", function() {
+	return Songs.find();
 });
