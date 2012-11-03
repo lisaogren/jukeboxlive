@@ -1,4 +1,13 @@
 /**
+ * -----------------------------------------------------------------------------
+ *  Meteor Models / Loaded on both server and client-side
+ * -----------------------------------------------------------------------------
+ */
+
+
+
+
+/**
  * Initialize bands collection
  * @type {Meteor.Collection}
  */
@@ -39,6 +48,9 @@ Bands = new Meteor.Collection("bands");
  * @type {Meteor.Collection}
  */
 Concerts = new Meteor.Collection("concerts");
+
+
+
 
 
 /**
