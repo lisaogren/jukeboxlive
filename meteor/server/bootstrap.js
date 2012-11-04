@@ -47,7 +47,7 @@ Meteor.startup(function() {
 
 			for (var j = 0; j < 10; j++) {
 				Songs.insert({
-					"name": "Song #" + j,
+					"name": "Song #" + (j + 1),
 					"concertId": concertId
 				});
 			}

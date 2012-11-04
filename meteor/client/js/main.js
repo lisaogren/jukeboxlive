@@ -26,10 +26,16 @@ events = EventManager({
  * -----------------------------------------------------------------------------
  */
 router = Router({
-	"/": "home",
-	"/vote": "vote",
-	"/calendar": "calendar",
-	"/about": "about"
+	"/": { tpl: "home" },
+	"/vote": { tpl: "vote" },
+	"/calendar": { tpl: "calendar" },
+	"/about": { tpl: "about" },
+
+	// band pages
+	"/band/:name": {
+		tpl: "band",
+		callback: BandTemplateInit
+	}
 });
 
 

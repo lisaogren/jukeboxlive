@@ -38,15 +38,19 @@ Router.prototype = Router.fn = {
 			(function() {
 
 				var route = i,
-					tpl = self.routes[i];
+					data = self.routes[i];
 
-				self.page(route, function() {
-					console.log("[Router] Detected route " + route + ": " + tpl);
+				self.page(route, function(ctx, next) {
+					console.log("[Router] Detected route " + route + ": " + data.tpl);
+
+					console.log("name param: ", ctx);
 
 					// Store current page in session
-					Session.set("currentPage", tpl);
-					// Store data that might have been passed along the page
-					Session.set("pageOptions", arguments);
+					Session.set("currentPage", data.tpl);
+					
+					// If a callback was given execute it
+					if ($.isFunction(data.callback))
+						data.callback(ctx);
 				});
 
 			})();

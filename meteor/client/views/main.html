@@ -40,6 +40,13 @@ Main content area
 		<div id="menu-ctnr">
 			<ul id="menu">
 				<li><a href="/vote">Vote</a></li>
+				<li><a href="#">Bands</a>
+					<ul>
+					{{#each bands}}
+						<li><a href="/band/{{name}}">{{name}}</a></li>
+					{{/each}}
+					</ul>
+				</li>
 				<li><a href="/calendar">Calendar</a></li>
 				<li><a href="/about">About</a></li>
 			</ul>
@@ -49,6 +56,7 @@ Main content area
 			{{> vote}}
 			{{> calendar}}
 			{{> about}}
+			{{> band}}
 		</div>
 	</div>
 </template>
@@ -102,6 +110,34 @@ Main content area
 {{#if currentPage}}
 
 	<h1>About</h1>
+
+{{/if}}
+</template>
+
+
+
+<template name="band">
+{{#if currentPage}}
+
+	<h1>{{band.name}}</h1>
+	
+	<div class="description">
+		{{band.description}}
+	</div>
+
+	<div id="concerts">
+	{{#each concerts}}
+		<div class="concert">
+			<h3>{{label}}</h3>
+
+			<ul>
+			{{#each songs}}
+				<li>{{name}}</li>
+			{{/each}}
+			</ul>
+		</div>
+	{{/each}}
+	</div>
 
 {{/if}}
 </template>
