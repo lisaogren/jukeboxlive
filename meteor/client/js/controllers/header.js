@@ -1,6 +1,9 @@
 /**
  * -----------------------------------------------------------------------------
- * Content template helpers and actions
+ * Header template helpers and actions
  * -----------------------------------------------------------------------------
  */
 
+Template.header.connected = function() {
+	return Meteor.status().connected;
+};

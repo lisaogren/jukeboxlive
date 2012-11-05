@@ -25,6 +25,9 @@ Contains the title and login area
 				</a>
 			</h1>
 			<div id="login-ctnr">
+				<div id="status">
+					Server Status: {{#if connected}}Connected{{else}}Disconnected{{/if}}
+				</div>
 				{{loginButtons align="right"}}
 			</div>
 		</div>
@@ -38,18 +41,7 @@ Main content area
 <template name="content">
 	<div id="content" class="ui-helper-clearfix">
 		<div id="menu-ctnr">
-			<ul id="menu">
-				<li><a href="/vote">Vote</a></li>
-				<li><a href="#">Bands</a>
-					<ul>
-					{{#each bands}}
-						<li><a href="/band/{{name}}">{{name}}</a></li>
-					{{/each}}
-					</ul>
-				</li>
-				<li><a href="/calendar">Calendar</a></li>
-				<li><a href="/about">About</a></li>
-			</ul>
+			{{> menu}}
 		</div>
 		<div id="page-content">
 			{{> home}}
@@ -59,6 +51,22 @@ Main content area
 			{{> band}}
 		</div>
 	</div>
+</template>
+
+
+<template name="menu">
+	<ul id="menu">
+		<li><a href="/vote">Vote</a></li>
+		<li><a href="#">Bands</a>
+			<ul>
+			{{#each bands}}
+				<li><a href="/band/{{name}}">{{name}}</a></li>
+			{{/each}}
+			</ul>
+		</li>
+		<li><a href="/calendar">Calendar</a></li>
+		<li><a href="/about">About</a></li>
+	</ul>
 </template>
 
 

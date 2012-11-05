@@ -34,14 +34,15 @@ Meteor.startup(function() {
 		// Bands
 		var bandsList = [
 			{ "name": "GMH", "description": "Melodic Punk Metal", "origin": "France" },
-			{ "name": "Rock'Ave", "description": "Rock'n'Roll Blues", "origin": "France" }
+			{ "name": "Rock'Ave", "description": "Rock'n'Roll Blues", "origin": "France" },
+			{ "name": "Roux Libres", "description": "Chanson française", "origin": "France" }
 		];
 
 		for (var i in bandsList) {
 			var bandId = Bands.insert(bandsList[i]);
 
 			var concertId = Concerts.insert({
-				"label": "Concert de " + bandsList[i].name,
+				"label": "Concert des " + bandsList[i].name,
 				"bandId": bandId
 			});
 

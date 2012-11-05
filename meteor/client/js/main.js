@@ -59,6 +59,4 @@ Meteor.subscribe('songs');
  */
 Meteor.startup(function() {
 	console.log("[Meteor.startup] Meteor client started");
-
-	$("#menu").menu();
 });
