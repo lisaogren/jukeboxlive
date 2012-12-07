@@ -20,13 +20,15 @@ Contains the title and login area
 		<div class="ui-helper-clearfix">
 			<h1>
 				<a href="/">
-					<span>Jukebox Live</span>
-					<span class="description">Super Alpha</span>
+					<span class="title-part">
+						<span class="green">Juke</span>Box <span class="green">L</span>ive
+					</span>
+					<span class="title-part description">Super Alpha</span>
 				</a>
 			</h1>
 			<div id="login-ctnr">
 				<div id="status">
-					Server Status: {{#if connected}}Connected{{else}}Disconnected{{/if}}
+					Server Status: {{#if connected}}<span class="connected">Connected{{else}}<span class="disconnected">Disconnected{{/if}}</span>
 				</div>
 				{{loginButtons align="right"}}
 			</div>
@@ -40,112 +42,9 @@ Main content area
 -->
 <template name="content">
 	<div id="content" class="ui-helper-clearfix">
-		<div id="menu-ctnr">
-			{{> menu}}
-		</div>
 		<div id="page-content">
-			{{> home}}
-			{{> vote}}
-			{{> calendar}}
-			{{> about}}
 			{{> band}}
+			{{> about}}
 		</div>
 	</div>
-</template>
-
-
-<template name="menu">
-	<ul id="menu">
-		<li><a href="/vote">Vote</a></li>
-		<li><a href="#">Bands</a>
-			<ul>
-			{{#each bands}}
-				<li><a href="/band/{{name}}">{{name}}</a></li>
-			{{/each}}
-			</ul>
-		</li>
-		<li><a href="/calendar">Calendar</a></li>
-		<li><a href="/about">About</a></li>
-	</ul>
-</template>
-
-
-<template name="home">
-{{#if currentPage}}
-
-	<h1>Home</h1>
-
-	<ul>
-	{{#each songs}}
-		<li>
-			<strong>{{label}}</strong>
-		</li>
-	{{/each}}
-	</ul>
-
-{{/if}}
-</template>
-
-
-
-<template name="vote">
-{{#if currentPage}}
-
-	<h1>Bands in top 10</h1>
-
-    <ul id="item-list">
-      {{#each bands}}
-        <li>{{text}}</li>
-      {{/each}}
-    </ul>
-
-{{/if}}
-</template>
-
-
-
-<template name="calendar">
-{{#if currentPage}}
-
-	<h1>Calendar</h1>
-
-{{/if}}
-</template>
-
-
-
-<template name="about">
-{{#if currentPage}}
-
-	<h1>About</h1>
-
-{{/if}}
-</template>
-
-
-
-<template name="band">
-{{#if currentPage}}
-
-	<h1>{{band.name}}</h1>
-	
-	<div class="description">
-		{{band.description}}
-	</div>
-
-	<div id="concerts">
-	{{#each concerts}}
-		<div class="concert">
-			<h3>{{label}}</h3>
-
-			<ul>
-			{{#each songs}}
-				<li>{{name}}</li>
-			{{/each}}
-			</ul>
-		</div>
-	{{/each}}
-	</div>
-
-{{/if}}
 </template>

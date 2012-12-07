@@ -1,0 +1,13 @@
+<template name="vote">
+{{#if currentPage}}
+
+	<h1>Bands in top 10</h1>
+
+    <ul id="item-list">
+      {{#each bands}}
+        <li>{{text}}</li>
+      {{/each}}
+    </ul>
+
+{{/if}}
+</template>

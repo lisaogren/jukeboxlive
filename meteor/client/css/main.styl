@@ -2,6 +2,16 @@
 
 main_width = 100%;
 min_width = 250px;
+background_color = #33342D;
+content_background_color = #46483E
+title_color = #D2D8BA
+text_color = white
+text_grey = #999
+text_green = #8CC84B
+text_red = red
+link_color = #777
+link_hover_color = #999
+
 
 
 
@@ -12,6 +22,8 @@ html, body {
 	height: 100%;
 	margin: 0;
 	padding: 0;
+	background: background_color;
+	color: text_color;
 }
 
 html {
@@ -21,6 +33,12 @@ html {
 body {
 	font-size: 0.8em;
 	font-family: Arial, sans-serif;
+}
+
+
+
+.green {
+	color: text_green;
 }
 
 
@@ -36,6 +54,7 @@ body {
 #header {
 	width: 100%;
 	border-bottom: black solid 1px;
+	background: content_background_color;
 
 	& > div {
 
@@ -49,11 +68,14 @@ body {
 		a {
 			display: block;
 			text-decoration: none;
-			color: black;
+			color: link_color;
 		}
 
 		span {
-			display: block;
+			
+			&.title-part {
+				display: block;
+			}
 
 			&.description {
 				font-size: 0.5em;
@@ -70,12 +92,22 @@ body {
 
 		#status {
 			margin-bottom: 5px;
+			color: text_grey;
+
+			.connected {
+				color: text_green;
+			}
+			.disconnected {
+				color: text_red;
+			}
 		}
 	}
 }
 
 #content {
 	margin: 10px 20px 20px 20px;
+	// background: content_background_color;
+	color: text_color;
 
 	#menu-ctnr {
 		float: left;

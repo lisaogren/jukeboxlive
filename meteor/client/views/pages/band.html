@@ -1,0 +1,25 @@
+<template name="band">
+{{#if currentPage}}
+
+	<h1>{{band.name}}</h1>
+	
+	<div class="description">
+		{{band.description}}
+	</div>
+
+	<div id="concerts">
+	{{#each concerts}}
+		<div class="concert">
+			<h3>{{label}}</h3>
+
+			<ul>
+			{{#each songs}}
+				<li>{{name}}</li>
+			{{/each}}
+			</ul>
+		</div>
+	{{/each}}
+	</div>
+
+{{/if}}
+</template>

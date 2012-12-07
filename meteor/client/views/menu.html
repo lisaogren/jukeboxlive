@@ -1,0 +1,14 @@
+<template name="menu">
+	<ul id="menu">
+		<li><a href="/vote">Vote</a></li>
+		<li><a href="#">Bands</a>
+			<ul>
+			{{#each bands}}
+				<li><a href="/band/{{name}}">{{name}}</a></li>
+			{{/each}}
+			</ul>
+		</li>
+		<li><a href="/calendar">Calendar</a></li>
+		<li><a href="/about">About</a></li>
+	</ul>
+</template>

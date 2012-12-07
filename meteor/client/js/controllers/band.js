@@ -4,18 +4,11 @@
  * -----------------------------------------------------------------------------
  */
 
-function BandTemplateInit(ctx) {
+
+
+Template.band.init = function(ctx) {
 	// Store the current selected band in session
 	Session.set("currentBand", ctx.params.name);
-};
-
-
-/**
- * Check if band is the current page
- * @return {boolean}
- */
-Template.band.currentPage = function() {
-	return Session.get('currentPage') === "band";
 };
 
 
