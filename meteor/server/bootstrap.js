@@ -5,44 +5,41 @@
  */
 Meteor.startup(function() {
 
-	/**
-	* Quelques données à afficher
-	* si BDD vide. (prévisionnel).
-	**/
- 	// if (Lists.find().count() === 0) {
-	    var data = [
-			{name: "Bands in top 10",
-				contents: [
-					["GMH", "France", "Melodic Punk Metal"],
-					["Arch Enemy", "Swede", "Deth Metal Melodic"],
-					["SoilWork", "Swede", "Deth Metal Melodic"],
-					["Propagandhi", "Canada", "Punk"],
-					["NoFx", "US", "Punk Rock"],
-					["Disarmonia Mundi", "Italy", "Deth Metal Melodic"],
-					["Bad Relegion", "US", "Punk Rock"],
-					["Iron Maiden", "England", "Heavy Metal"],
-					["L'esprit du clan", "France", "Hardcore Metal"],
-					["Ten Foot Pole", "US", "Punk Rock"]
-				]
-			}
-	    ];
-	// }
-	
+	Bands.remove({});
+	Venues.remove({});
+	Concerts.remove({});
+	Songs.remove({});
 
-
+	// Test data for the application
 	if (Bands.find().count() === 0) {
 		// Bands
 		var bandsList = [
-			{ "name": "GMH", "description": "Melodic Punk Metal", "origin": "France" },
-			{ "name": "Rock'Ave", "description": "Rock'n'Roll Blues", "origin": "France" },
-			{ "name": "Roux Libres", "description": "Chanson française", "origin": "France" }
+			{ "name": "GMH", "description": "Melodic Punk Metal", "origin": "France" }
+			// { "name": "Rock'Ave", "description": "Rock'n'Roll Blues", "origin": "France" },
+			// { "name": "Roux Libres", "description": "Chanson française", "origin": "France" }
 		];
 
-		for (var i in bandsList) {
-			var bandId = Bands.insert(bandsList[i]);
+		var venuesList = [
+			{ "name": "Vane Day Bar", "address": "30 avenue Pasteur", "zip": "93100", "city": "Montreuil" }
+		];
 
+		// Loop through each venue
+		for (var i in venuesList) {
+			// Insert venue
+			Venues.insert(venuesList[i]);
+		}
+
+		// Loop through each bands
+		for (var i in bandsList) {
+			// Insert band
+			var bandId = Bands.insert(bandsList[i]),
+				venueId = Venues.findOne({ "name": "Vane Day Bar" })._id;
+
+			// Create a concert for the band
 			var concertId = Concerts.insert({
-				"label": "Concert des " + bandsList[i].name,
+				"label": "Concert " + bandsList[i].name,
+				"date": new Date(),
+				"venueId": venueId,
 				"bandId": bandId
 			});
 

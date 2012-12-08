@@ -5,6 +5,12 @@
  */
 
 
+/**
+ * Initialize venues collection
+ */
+Venues = new Meteor.Collection("venues");
+
+
 
 
 /**
@@ -58,6 +64,7 @@ Concerts = new Meteor.Collection("concerts");
  * @type {Meteor.Collection}
  */
 Songs = new Meteor.Collection("songs");
+
 
 
 

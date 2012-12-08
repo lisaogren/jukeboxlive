@@ -1,10 +1,11 @@
 /* Site dimensions and colors */
 
-main_width = 100%;
-min_width = 250px;
-background_color = #33342D;
+main_width = 100%
+min_width = 250px
+background_color = #33342D
 content_background_color = #46483E
 title_color = #D2D8BA
+title_font = 'New Rocker', cursive
 text_color = white
 text_grey = #999
 text_green = #8CC84B
@@ -75,6 +76,7 @@ body {
 			
 			&.title-part {
 				display: block;
+				font-family: title_font;
 			}
 
 			&.description {
@@ -118,5 +120,60 @@ body {
 		display: table;
 		min-width: 200px;
 		padding-bottom: 20px;
+	}
+}
+
+
+#concerts {
+	.concert {
+		h2 {
+			padding-bottom: 3px;
+			border-bottom: white solid 1px;
+		}
+
+		.description {
+			font-style: italic;
+			color: text_grey;
+			margin-bottom: 10px;
+
+			.item {
+				font-style: normal;
+				color: text_color;
+				margin-bottom: 10px;
+
+				span.label {
+					display: block;
+					float: left;
+					width: 100px;
+					font-size: 1.1em;
+					font-weight: bold;
+					color: text_grey;
+				}
+
+				span.content {
+					display: table;
+				}
+			}
+		}
+
+		.songs-list {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+
+			li {
+				margin: 0;
+				padding: 0;
+				border: text_grey solid 1px;
+				border-radius: 2px;
+				margin-bottom: 5px;
+				cursor: pointer;
+
+				span {
+					display: block;
+					padding: 5px;
+				}
+			}
+		}
 	}
 }

@@ -1,20 +1,45 @@
 <template name="band">
 {{#if currentPage}}
 
-	<h1>{{band.name}}</h1>
+	<!-- <h1>{{band.name}}</h1>
 	
 	<div class="description">
 		{{band.description}}
-	</div>
+	</div> -->
 
 	<div id="concerts">
 	{{#each concerts}}
 		<div class="concert">
-			<h3>{{label}}</h3>
+			<h2>{{label}}, {{venue.name}} @ {{formated_time}}, {{formated_date}}</h2>
 
-			<ul>
+			<div class="description">
+				<div class="ui-helper-clearfix item">
+					<span class="label">Quand ?</span>
+					<span class="content">
+						{{formated_datetime}}
+					</span>
+				</div>
+				<div class="ui-helper-clearfix item">
+					<span class="label">Où ?</span>
+					<span class="content">
+						{{venue.name}}<br>
+						{{venue.address}}<br>
+						{{venue.zip}} {{venue.city}}
+					</span>
+				</div>
+			</div>
+
+			<h2>Chansons</h2>
+
+			<div class="description">
+				Vote pour les chansons que tu voudrais entendre au concert
+			</div>
+
+			<ul class="songs-list">
 			{{#each songs}}
-				<li>{{name}}</li>
+				<li>
+					<span>{{name}}</span>
+				</li>
 			{{/each}}
 			</ul>
 		</div>

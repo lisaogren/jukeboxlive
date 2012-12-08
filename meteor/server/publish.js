@@ -8,6 +8,14 @@
 
 
 /**
+ * Publish the venues collection
+ */
+Meteor.publish("venues", function() {
+	return Venues.find();
+});
+
+
+/**
  * Publish the available bands
  */
 Meteor.publish("bands", function() {

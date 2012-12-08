@@ -27,6 +27,14 @@ Template.band.concerts = function() {
 		var concerts = Concerts.find({ "bandId": band._id }).fetch();
 
 		for (var i in concerts) {
+			concerts[i].venue = Venues.findOne({ "_id": concerts[i].venueId });
+
+			var date = new Date(concerts[i].date);
+
+			concerts[i].formated_date = date.format("shortDateFr");
+			concerts[i].formated_time = date.format("time");
+			concerts[i].formated_datetime = date.format();
+
 			concerts[i].songs = Songs.find({ "concertId": concerts[i]._id });
 		}
 

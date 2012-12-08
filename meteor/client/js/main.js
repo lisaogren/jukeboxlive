@@ -156,6 +156,7 @@ jb.router.init({
  *  SUBSCRIPTIONS
  * -----------------------------------------------------------------------------
  */
+Meteor.subscribe('venues');
 Meteor.subscribe('bands');
 Meteor.subscribe('concerts');
 Meteor.subscribe('songs');
