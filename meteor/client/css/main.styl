@@ -168,10 +168,21 @@ body {
 				border-radius: 2px;
 				margin-bottom: 5px;
 				cursor: pointer;
+				position: relative;
 
 				span {
 					display: block;
 					padding: 5px;
+
+					&.checkbox {
+						position: absolute;
+						top: 5px;
+						right: 5px;
+						border: text_grey solid 1px;
+						width: 5px;
+						height: 5px;
+						border-radius: 2px;
+					} 
 				}
 			}
 		}
