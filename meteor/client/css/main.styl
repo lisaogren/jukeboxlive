@@ -1,7 +1,8 @@
 /* Site dimensions and colors */
 
 main_width = 100%
-min_width = 250px
+min_width = 400px
+max_width = 1000px
 background_color = #33342D
 content_background_color = #46483E
 title_color = #D2D8BA
@@ -56,9 +57,12 @@ body {
 	width: 100%;
 	border-bottom: black solid 1px;
 	background: content_background_color;
+	text-align: center;
 
 	& > div {
-
+		max-width: max_width;
+		margin: auto;
+		text-align: left;
 	}
 
 	h1 {
@@ -107,9 +111,10 @@ body {
 }
 
 #content {
-	margin: 10px 20px 20px 20px;
+	margin: 10px auto 20px auto;
 	// background: content_background_color;
 	color: text_color;
+	max-width: max_width;
 
 	#menu-ctnr {
 		float: left;
@@ -118,7 +123,8 @@ body {
 	}
 	#page-content {
 		display: table;
-		min-width: 200px;
+		width: 100%;
+		min-width: min_width;
 		padding-bottom: 20px;
 	}
 }
@@ -129,12 +135,17 @@ body {
 		h2 {
 			padding-bottom: 3px;
 			border-bottom: white solid 1px;
+
+			span {
+				display: block;
+				padding: 0 20px;
+			}
 		}
 
 		.description {
 			font-style: italic;
 			color: text_grey;
-			margin-bottom: 10px;
+			margin: 0 40px 10px 40px;
 
 			.item {
 				font-style: normal;
@@ -157,11 +168,13 @@ body {
 		}
 
 		.songs-list {
-			margin: 0;
+			margin: 10px 40px 0 40px;
 			padding: 0;
 			list-style: none;
+			max-width: 400px;
 
 			li {
+				height: 25px;
 				margin: 0;
 				padding: 0;
 				border: text_grey solid 1px;
@@ -175,14 +188,28 @@ body {
 					padding: 5px;
 
 					&.checkbox {
-						position: absolute;
-						top: 5px;
-						right: 5px;
+						display: block;
+						float: left;
 						border: text_grey solid 1px;
 						width: 5px;
 						height: 5px;
 						border-radius: 2px;
+						margin: 4px 10px 0 5px;
 					} 
+				}
+
+				&.selected {
+					background: content_background_color;
+
+					span.checkbox {
+						color: text_green;
+
+						span {
+							position: relative;
+							top: -11px;
+							left: -9px;
+						}
+					}
 				}
 			}
 		}

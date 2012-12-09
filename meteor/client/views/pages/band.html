@@ -10,7 +10,9 @@
 	<div id="concerts">
 	{{#each concerts}}
 		<div class="concert">
-			<h2>{{label}}, {{venue.name}} @ {{formated_time}}, {{formated_date}}</h2>
+			<h2>
+				<span>{{label}}, {{venue.name}} @ {{formated_time}}, {{formated_date}}</span>
+			</h2>
 
 			<div class="description">
 				<div class="ui-helper-clearfix item">
@@ -29,7 +31,9 @@
 				</div>
 			</div>
 
-			<h2>Chansons</h2>
+			<h2>
+				<span>Chansons</span>
+			</h2>
 
 			<div class="description">
 				Vote pour les chansons que tu voudrais entendre au concert
@@ -37,11 +41,11 @@
 
 			<ul class="songs-list">
 			{{#each songs}}
-				<li>
-					<span>{{name}}</span>
+				<li {{#if hasMyVote}}class="selected"{{/if}}>
 					<span class="checkbox">
-						
+						{{#if hasMyVote}}<span>&#10004;</span>{{/if}}
 					</span>
+					<span>{{name}}</span>
 				</li>
 			{{/each}}
 			</ul>
