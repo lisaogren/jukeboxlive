@@ -12,11 +12,6 @@
 	</div>
 </body>
 
-
-<!--
-Header template
-Contains the title and login area
--->
 <template name="header">
 	<div id="header">
 		<div class="ui-helper-clearfix">
@@ -30,7 +25,10 @@ Contains the title and login area
 			</h1>
 			<div id="login-ctnr">
 				<div id="status">
-					Server Status: {{#if connected}}<span class="connected">Connected{{else}}<span class="disconnected">Disconnected{{/if}}</span>
+					Server Status:
+					{{#if connected}}<span class="connected">Connected
+					{{else}}<span class="disconnected">Disconnected
+					{{/if}}</span>
 				</div>
 				{{loginButtons align="right"}}
 			</div>
@@ -38,10 +36,6 @@ Contains the title and login area
 	</div>
 </template>
 
-
-<!--
-Main content area
--->
 <template name="content">
 	<div id="content" class="ui-helper-clearfix">
 		<div id="page-content">

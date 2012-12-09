@@ -5,10 +5,10 @@
  */
 Meteor.startup(function() {
 
-	Bands.remove({});
-	Venues.remove({});
-	Concerts.remove({});
-	Songs.remove({});
+	// Bands.remove({});
+	// Venues.remove({});
+	// Concerts.remove({});
+	// Songs.remove({});
 
 	// Test data for the application
 	if (Bands.find().count() === 0) {

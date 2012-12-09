@@ -42,16 +42,18 @@
 			<ul class="songs-list">
 			{{#each songs}}
 				<li {{#if hasMyVote}}class="selected"{{/if}}>
-					{{#if loggedIn}}
+					{{#if currentUser}}
 					<span class="checkbox">
 						{{#if hasMyVote}}<span>&#10004;</span>{{/if}}
 					</span>
 					{{/if}}
 					<span>{{name}}</span>
+					{{#if currentUser}}
 					<span class="other-votes" title="Le nombre total de votes pour cette chanson">
 						<img src="/images/thumbsup.png">
 						{{voteCount}}
 					</span>
+					{{/if}}
 				</li>
 			{{/each}}
 			</ul>

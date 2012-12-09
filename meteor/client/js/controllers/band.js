@@ -5,41 +5,55 @@
  */
 
 
-
+/**
+ * Initialize a band page. Given as a callback to page.js.
+ * Recieves a context object from page.js with a name param
+ * to find the corresponding band.
+ * Stores the value in the "currentBand" session field
+ * 
+ * @param  {Context} ctx The page.js context object
+ */
 Template.band.init = function(ctx) {
 	// Store the current selected band in session
 	Session.set("currentBand", ctx.params.name);
 };
 
 
-Template.band.loggedIn = function() {
-	return Meteor.userId() !== null;
-};
-
-
-
+/**
+ * Retrieve de band from the database
+ * @return {Band} The band object
+ */
 Template.band.band = function() {
-	var band = Bands.findOne({ "name": Session.get("currentBand") });
-	return band;
+	return Bands.findOne({ "name": Session.get("currentBand") });;
 };
 
 
-
+/**
+ * Retrieve band concerts and songs
+ * @return {Concerts} A list of concerts
+ */
 Template.band.concerts = function() {
+	// Find the band
 	var band = Bands.findOne({ "name": Session.get("currentBand") });
 
 	if (band) {
+		// Retrieve the band's list of concerts
 		var concerts = Concerts.find({ "bandId": band._id }).fetch();
 
+		// loop through the concerts
 		for (var i in concerts) {
+			// Retrieve the venue of the concert
 			concerts[i].venue = Venues.findOne({ "_id": concerts[i].venueId });
 
+			// Retrieve the date
 			var date = new Date(concerts[i].date);
 
+			// Format the date
 			concerts[i].formated_date = date.format("shortDateFr");
 			concerts[i].formated_time = date.format("time");
 			concerts[i].formated_datetime = date.format();
 
+			// Retrieve the songs of the concert
 			concerts[i].songs = Songs.find({ "concertId": concerts[i]._id }, {
 				sort: { "position": 1 }
 			});
@@ -50,6 +64,10 @@ Template.band.concerts = function() {
 };
 
 
+/**
+ * Check if a song has the current user's vote
+ * @return {Boolean} True if the current user voted for this song else false
+ */
 Template.band.hasMyVote = function() {
 	if (Meteor.userId() === null) return false;
 
@@ -58,9 +76,13 @@ Template.band.hasMyVote = function() {
 	}).length;
 };
 
+
+/**
+ * Counts the total number of votes for a song
+ * @return {Number} The number of votes
+ */
 Template.band.voteCount = function() {
-	// if (Meteor.userId() === null) return false;
-	console.log("Counting other votes for ", this);
+	if (Meteor.userId() === null) return false;
 
 	return _.filter(this.votes, function(vote) {
 		return vote !== null;
@@ -69,10 +91,20 @@ Template.band.voteCount = function() {
 
 
 
+/**
+ * Band template user events
+ * @type {Object}
+ */
 Template.band.events = {
+
+	/**
+	 * User votes/unvotes for a song in the list
+	 * @param  {Event} evt The user event object
+	 * @param  {Template} tpl Meteor template object
+	 */
 	"click .songs-list li": function(evt, tpl) {
 		if (Meteor.userId() === null) {
-			console.log("[band.events] [click " + evt.currentTarget + "] Not logged in, motion denied");
+			log("[band.events] Not logged in, cannot vote on songs", log.DEBUG);
 			return false;
 		}
 
@@ -85,13 +117,14 @@ Template.band.events = {
 			}).length;
 
 			if (hasMyVote) {
-				console.log("[band.events] Trying to remove user vote");
+				log("[band.events] Removing user vote for song: " + this.name, log.DEBUG);
 
 				Songs.update({ "_id": this._id, "votes.user_id": Meteor.userId() }, {
 					$unset: { "votes.$": 1 }
 				});
 			} else {
-				console.log("[band.events] Trying to set user vote");
+				log("[band.events] Adding user vote for song: " + this.name, log.DEBUG);
+
 				Songs.update({ "_id": this._id }, {
 					$push: {
 						"votes": {
@@ -102,18 +135,7 @@ Template.band.events = {
 				});
 			}
 		} else {
-			console.log("[band.events] Could find song with id " + this._id);
+			log("[band.events] Could find song with id " + this._id, log.DEBUG);
 		}
 	}
 };
-
-
-// Template.band.created = function() {
-// 	$(".songs-list").sortable({
-// 		"placeholder": "ui-state-highlight"
-// 	});
-// };
-
-// Template.band.rendered = function() {
-// 	$(".songs-list").refresh();
-// };

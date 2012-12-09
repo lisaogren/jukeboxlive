@@ -20,33 +20,6 @@ Venues = new Meteor.Collection("venues");
 Bands = new Meteor.Collection("bands");
 
 
-/**
- * Define modification rights
- */
-// Bands.allow({
-// 	insert: function(userId, band) {
-// 		return true;
-// 	},
-// 	update: function(userId, bands, fields, modifier) {
-// 		// return _.all(bands, function(band) {
-// 		// 	if (userId !== band.owner)
-// 		// 		return false;
-
-
-
-// 		// 	return true;
-// 		// });
-// 		return true;
-// 	},
-// 	remove: function(userId, bands) {
-// 		// return ! _.any(bands, function(band) {
-// 		// 	return userId !== band.owner;
-// 		// });
-// 		return true;
-// 	}
-// });
-
-
 
 
 /**
@@ -66,33 +39,19 @@ Concerts = new Meteor.Collection("concerts");
 Songs = new Meteor.Collection("songs");
 
 
+/**
+ * Determine authorized actions on songs collection
+ */
 Songs.allow({
+	// Deny all insertions
 	insert: function() {
 		return false;
 	},
+	// authorize logged in users to modify votes field
 	update: function(userId, songs, fields, modifier) {
-		// console.log(userId);
-		// console.log(songs);
-		// console.log(fields);
-		// console.log(modifier);
-
-		
-
-		if (fields[0] === 'votes') {
-			// return _.all(songs, function(song) {
-			// 	var hasMyVote = _.filter(song.votes, function(vote) {
-			// 		return vote.user_id === userId;
-			// 	});
-
-			// 	return ! hasMyVote.length;
-			// });
-			return true;
-		}
-
-		console.log("User update rejected");
-
-		return false;
+		return Meteor.userId() && fields.length = 1 && fields[0] === "votes";
 	},
+	// deny all deletions
 	remove: function() {
 		return false;
 	}

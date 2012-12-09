@@ -31,7 +31,7 @@ window.jb = (function() {
 				}
 
 				// trigger a success event
-				this.trigger('eventmanager:success');
+				this.trigger('events:success');
 			}
 		},
 
@@ -87,7 +87,7 @@ window.jb = (function() {
 				}
 
 				self.page(route, function(ctx, inf) {
-					console.log("[Router] Detected route " + route + ": " + data.tpl);
+					log("[jb.router] Detected route " + route + ": " + data.tpl, log.DEBUG);
 
 					// Store current page in session
 					Session.set("currentPage", data.tpl);
@@ -129,8 +129,8 @@ window.jb = (function() {
  * Initialize jb.events
  */
 jb.events.init({
-	success: function() {
-		console.log("[EventManager] Successfully loaded EventManager");
+	"events:success": function() {
+		log("[jb.events] Successfully loaded", log.DEBUG);
 	}
 });
 
@@ -170,5 +170,5 @@ Meteor.subscribe('songs');
  * -----------------------------------------------------------------------------
  */
 Meteor.startup(function() {
-	console.log("[Meteor.startup] Meteor client started");
+	log("[Meteor.startup] Meteor client started", log.DEBUG);
 });
