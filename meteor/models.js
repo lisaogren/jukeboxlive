@@ -66,7 +66,37 @@ Concerts = new Meteor.Collection("concerts");
 Songs = new Meteor.Collection("songs");
 
 
+Songs.allow({
+	insert: function() {
+		return false;
+	},
+	update: function(userId, songs, fields, modifier) {
+		// console.log(userId);
+		// console.log(songs);
+		// console.log(fields);
+		// console.log(modifier);
 
+		
+
+		if (fields[0] === 'votes') {
+			// return _.all(songs, function(song) {
+			// 	var hasMyVote = _.filter(song.votes, function(vote) {
+			// 		return vote.user_id === userId;
+			// 	});
+
+			// 	return ! hasMyVote.length;
+			// });
+			return true;
+		}
+
+		console.log("User update rejected");
+
+		return false;
+	},
+	remove: function() {
+		return false;
+	}
+});
 
 
 
@@ -77,20 +107,20 @@ Meteor.methods({
 	/**
 	 * Create a new band in the collection
 	 */
-	createBand: function() {},
+	// createBand: function() {},
 
 	/**
 	 * Update an existing band in the collection
 	 */
-	updateBand: function() {},
+	// updateBand: function() {},
 
 	/**
 	 * Create a concert
 	 */
-	createConcert: function() {},
+	// createConcert: function() {},
 
 	/**
 	 * Update an existing concert
 	 */
-	updateConcert: function() {}
+	// updateConcert: function() {}
 });

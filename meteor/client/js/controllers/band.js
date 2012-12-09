@@ -12,6 +12,11 @@ Template.band.init = function(ctx) {
 };
 
 
+Template.band.loggedIn = function() {
+	return Meteor.userId() !== null;
+};
+
+
 
 Template.band.band = function() {
 	var band = Bands.findOne({ "name": Session.get("currentBand") });
@@ -48,43 +53,67 @@ Template.band.concerts = function() {
 Template.band.hasMyVote = function() {
 	if (Meteor.userId() === null) return false;
 
-	var votes = _.filter(this.votes, function(vote) {
-		return vote.user_id === Meteor.userId();
-	});
+	return !! _.filter(this.votes, function(vote) {
+		return vote !== null && vote.user_id === Meteor.userId();
+	}).length;
+};
 
-	return !!votes.length;
+Template.band.voteCount = function() {
+	// if (Meteor.userId() === null) return false;
+	console.log("Counting other votes for ", this);
+
+	return _.filter(this.votes, function(vote) {
+		return vote !== null;
+	}).length;
 };
 
 
 
 Template.band.events = {
 	"click .songs-list li": function(evt, tpl) {
-		if (Meteor.userId() === null) return false;
+		if (Meteor.userId() === null) {
+			console.log("[band.events] [click " + evt.currentTarget + "] Not logged in, motion denied");
+			return false;
+		}
 
-		// $(tpl.find(".checkbox")).addClass("selected");
+		var song = Songs.findOne({ "_id": this._id });
 
-		Songs.update({
-				_id: this._id
-			}, {
-				$push: {
-					"votes": {
-						"user_id": Meteor.userId(),
-						"date": new Date().getTime()
+		if (song) {
+			var hasMyVote = !! _.filter(song.votes, function(vote) {
+				if (vote === null) return false;
+				return vote.user_id === Meteor.userId();
+			}).length;
+
+			if (hasMyVote) {
+				console.log("[band.events] Trying to remove user vote");
+
+				Songs.update({ "_id": this._id, "votes.user_id": Meteor.userId() }, {
+					$unset: { "votes.$": 1 }
+				});
+			} else {
+				console.log("[band.events] Trying to set user vote");
+				Songs.update({ "_id": this._id }, {
+					$push: {
+						"votes": {
+							"user_id": Meteor.userId(),
+							"date": new Date()
+						}
 					}
-				}
-			});
-
-		console.log(Songs.findOne({ _id: this._id }));
+				});
+			}
+		} else {
+			console.log("[band.events] Could find song with id " + this._id);
+		}
 	}
 };
 
 
-Template.band.created = function() {
-	$(".songs-list").sortable({
-		"placeholder": "ui-state-highlight"
-	});
-};
+// Template.band.created = function() {
+// 	$(".songs-list").sortable({
+// 		"placeholder": "ui-state-highlight"
+// 	});
+// };
 
-Template.band.rendered = function() {
-	$(".songs-list").refresh();
-};
+// Template.band.rendered = function() {
+// 	$(".songs-list").refresh();
+// };

@@ -134,7 +134,7 @@ body {
 	.concert {
 		h2 {
 			padding-bottom: 3px;
-			border-bottom: white solid 1px;
+			border-bottom: text_grey solid 1px;
 
 			span {
 				display: block;
@@ -186,15 +186,27 @@ body {
 				span {
 					display: block;
 					padding: 5px;
+					float: left;
 
 					&.checkbox {
 						display: block;
-						float: left;
 						border: text_grey solid 1px;
 						width: 5px;
 						height: 5px;
 						border-radius: 2px;
 						margin: 4px 10px 0 5px;
+					}
+
+					&.other-votes {
+						display: block;
+						float: right;
+						margin: 0 5px 0 10px;
+						font-weight: bold;
+						font-size: 1.2em;
+
+						img {
+							height: 12px;
+						}
 					} 
 				}
 
