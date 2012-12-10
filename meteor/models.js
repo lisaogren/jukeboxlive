@@ -49,7 +49,7 @@ Songs.allow({
 	},
 	// authorize logged in users to modify votes field
 	update: function(userId, songs, fields, modifier) {
-		return Meteor.userId() && fields.length = 1 && fields[0] === "votes";
+		return Meteor.userId() && fields.length === 1 && fields[0] === "votes";
 	},
 	// deny all deletions
 	remove: function() {
