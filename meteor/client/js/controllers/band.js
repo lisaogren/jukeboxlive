@@ -24,7 +24,7 @@ Template.band.init = function(ctx) {
  * @return {Band} The band object
  */
 Template.band.band = function() {
-	return Bands.findOne({ "name": Session.get("currentBand") });;
+	return Bands.findOne({ "name": Session.get("currentBand") });
 };
 
 
