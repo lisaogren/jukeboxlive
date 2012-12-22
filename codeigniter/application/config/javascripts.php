@@ -5,6 +5,7 @@
 $config['javascripts'] = array(
 	// jQuery scripts
 	'vendor/jquery/jquery-1.8.3.min.js',
+	'vendor/jquery/jquery-ui-1.9.1.min.js',
 
 	// backbone
 	'vendor/backbone/json2.js',

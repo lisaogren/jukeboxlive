@@ -3,6 +3,6 @@
 
 
 $config['stylesheets'] = array(
-	// 'jquery/geek/jquery-ui-1.8.17.css',
+	'jquery/smoothness/jquery-ui-1.9.1.css',
 	'main.css'
 );

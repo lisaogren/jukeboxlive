@@ -5,8 +5,29 @@
 </head>
 <body>
 	<div id="main">
-		<div id="header"></div>
-		<div id="content"></div>
+		<div id="header">
+			<div class="ui-helper-clearfix">
+				<h1>
+					<a href="/">
+						<span class="title-part">
+							<span class="green">Juke</span>Box <span class="green">L</span>ive
+						</span>
+						<span class="title-part description">Super Alpha</span>
+					</a>
+				</h1>
+				<div id="login-ctnr">
+					<div id="status">
+						
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<div id="content" class="ui-helper-clearfix">
+			<div id="page-content">
+				lala
+			</div>
+		</div>
 	</div>
 </body>
 </html>
