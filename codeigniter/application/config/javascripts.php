@@ -17,5 +17,8 @@ $config['javascripts'] = array(
 	'common.js',
 
 	// main js controller
-	'main.js'
+	'app.js',
+
+	// Modules
+	'modules/band-app/band-app.js'
 );

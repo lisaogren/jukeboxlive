@@ -4,17 +4,17 @@
  */
 
 // init marionette application
-JL = new Backbone.Marionette.Application();
+JBL = new Backbone.Marionette.Application();
 
 
 // add regions
-JL.addRegions({
+JBL.addRegions({
 	"content": "#content"
 });
 
 
 // init history when routing has started
-JL.vent.on("routing:started", function() {
+JBL.vent.on("routing:started", function() {
 	if (!Backbone.History.started) {
 		Backbone.history.start();
 	}
@@ -24,7 +24,7 @@ JL.vent.on("routing:started", function() {
 // Start marionette app
 $(function() {
 	log("[main] Starting JukeBox Live application");
-	JL.start();
+	JBL.start();
 });
 
 

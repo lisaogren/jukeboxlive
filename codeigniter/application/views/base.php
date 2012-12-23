@@ -24,9 +24,7 @@
 			</div>
 		</div>
 		<div id="content" class="ui-helper-clearfix">
-			<div id="page-content">
-				lala
-			</div>
+			lala
 		</div>
 	</div>
 </body>
