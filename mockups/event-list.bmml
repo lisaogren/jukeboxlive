@@ -1,0 +1,259 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1471" measuredH="636" mockupW="1433" mockupH="597">
+  <controls>
+    <control controlID="24" controlTypeID="__group__" x="38" y="39" w="893" h="597" measuredW="893" measuredH="597" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName>Browser</controlName>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="__group__" x="0" y="0" w="893" h="597" measuredW="893" measuredH="597" zOrder="0" locked="false" isInGroup="24">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="__group__" x="0" y="0" w="893" h="597" measuredW="893" measuredH="597" zOrder="0" locked="false" isInGroup="0">
+              <groupChildrenDescriptors>
+                <control controlID="0" controlTypeID="__group__" x="0" y="0" w="893" h="597" measuredW="893" measuredH="597" zOrder="0" locked="false" isInGroup="0">
+                  <groupChildrenDescriptors>
+                    <control controlID="0" controlTypeID="__group__" x="0" y="0" w="893" h="597" measuredW="893" measuredH="597" zOrder="0" locked="false" isInGroup="0">
+                      <groupChildrenDescriptors>
+                        <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="0" y="0" w="893" h="597" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="0">
+                          <controlProperties>
+                            <text>JukeBox%20Live%0Ahttp%3A//jukeboxlive.meteor.com</text>
+                            <value>0</value>
+                            <verticalScrollbar>true</verticalScrollbar>
+                          </controlProperties>
+                        </control>
+                      </groupChildrenDescriptors>
+                    </control>
+                  </groupChildrenDescriptors>
+                </control>
+                <control controlID="1" controlTypeID="__group__" x="0" y="128" w="868" h="10" measuredW="868" measuredH="10" zOrder="1" locked="false" isInGroup="0">
+                  <groupChildrenDescriptors>
+                    <control controlID="0" controlTypeID="__group__" x="0" y="0" w="868" h="10" measuredW="868" measuredH="10" zOrder="0" locked="false" isInGroup="1">
+                      <groupChildrenDescriptors>
+                        <control controlID="0" controlTypeID="__group__" x="0" y="0" w="868" h="10" measuredW="868" measuredH="10" zOrder="0" locked="false" isInGroup="0">
+                          <groupChildrenDescriptors>
+                            <control controlID="0" controlTypeID="__group__" x="0" y="0" w="868" h="10" measuredW="868" measuredH="10" zOrder="0" locked="false" isInGroup="0">
+                              <groupChildrenDescriptors>
+                                <control controlID="0" controlTypeID="__group__" x="0" y="0" w="868" h="10" measuredW="868" measuredH="10" zOrder="0" locked="false" isInGroup="0">
+                                  <groupChildrenDescriptors>
+                                    <control controlID="0" controlTypeID="__group__" x="0" y="0" w="868" h="10" measuredW="868" measuredH="10" zOrder="0" locked="false" isInGroup="0">
+                                      <groupChildrenDescriptors>
+                                        <control controlID="0" controlTypeID="__group__" x="0" y="0" w="868" h="10" measuredW="868" measuredH="10" zOrder="0" locked="false" isInGroup="0">
+                                          <groupChildrenDescriptors>
+                                            <control controlID="0" controlTypeID="com.balsamiq.mockups::HRule" x="0" y="0" w="868" h="-1" measuredW="100" measuredH="10" zOrder="0" locked="false" isInGroup="0">
+                                              <controlProperties>
+                                                <backgroundAlpha>1</backgroundAlpha>
+                                              </controlProperties>
+                                            </control>
+                                          </groupChildrenDescriptors>
+                                        </control>
+                                      </groupChildrenDescriptors>
+                                    </control>
+                                  </groupChildrenDescriptors>
+                                </control>
+                              </groupChildrenDescriptors>
+                            </control>
+                          </groupChildrenDescriptors>
+                        </control>
+                      </groupChildrenDescriptors>
+                    </control>
+                  </groupChildrenDescriptors>
+                </control>
+                <control controlID="2" controlTypeID="com.balsamiq.mockups::Label" x="16" y="91" w="132" h="29" measuredW="125" measuredH="28" zOrder="2" locked="false" isInGroup="0">
+                  <controlProperties>
+                    <size>20</size>
+                    <text>JukeBox%20Live</text>
+                  </controlProperties>
+                </control>
+              </groupChildrenDescriptors>
+            </control>
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="686" y="78" w="-1" h="-1" measuredW="93" measuredH="21" zOrder="1" locked="false" isInGroup="0">
+              <controlProperties>
+                <text>Server%20status%20%3A</text>
+              </controlProperties>
+            </control>
+            <control controlID="2" controlTypeID="com.balsamiq.mockups::Label" x="794" y="78" w="-1" h="-1" measuredW="68" measuredH="21" zOrder="2" locked="false" isInGroup="0">
+              <controlProperties>
+                <color>40463</color>
+                <text>Connected</text>
+              </controlProperties>
+            </control>
+            <control controlID="3" controlTypeID="com.balsamiq.mockups::Label" x="810" y="107" w="-1" h="-1" measuredW="52" measuredH="21" zOrder="3" locked="false" isInGroup="0">
+              <controlProperties>
+                <bold>true</bold>
+                <text>%20Sign%20in%20</text>
+                <underline>true</underline>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="8" controlTypeID="__group__" x="77" y="146" w="738" h="119" measuredW="738" measuredH="119" zOrder="1" locked="false" isInGroup="24">
+          <controlProperties>
+            <controlName>Event%20list</controlName>
+          </controlProperties>
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::Title" x="293" y="0" w="153" h="-1" measuredW="127" measuredH="28" zOrder="0" locked="false" isInGroup="8">
+              <controlProperties>
+                <align>center</align>
+                <color>6710886</color>
+                <italic>true</italic>
+                <size>20</size>
+                <text>List%20of%20events</text>
+              </controlProperties>
+            </control>
+            <control controlID="4" controlTypeID="com.balsamiq.mockups::Button" x="446" y="0" w="103" h="24" measuredW="104" measuredH="27" zOrder="2" locked="false" isInGroup="8">
+              <controlProperties>
+                <bold>true</bold>
+                <icon>PlusIcon%7Cxsmall</icon>
+                <italic>false</italic>
+                <text>Add%20Event</text>
+              </controlProperties>
+            </control>
+            <control controlID="12" controlTypeID="__group__" x="0" y="78" w="738" h="41" measuredW="738" measuredH="41" zOrder="3" locked="false" isInGroup="8">
+              <controlProperties>
+                <controlName>One%20of%20my%20events</controlName>
+              </controlProperties>
+              <groupChildrenDescriptors>
+                <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="738" h="41" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="12"/>
+                <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="15" y="10" w="212" h="21" measuredW="210" measuredH="24" zOrder="1" locked="false" isInGroup="12">
+                  <controlProperties>
+                    <bold>true</bold>
+                    <size>16</size>
+                    <text>Les%20Roux%20Libres%2C%20L%27Equinoxe</text>
+                  </controlProperties>
+                </control>
+                <control controlID="2" controlTypeID="com.balsamiq.mockups::Label" x="491" y="8" w="-1" h="-1" measuredW="156" measuredH="24" zOrder="2" locked="false" isInGroup="12">
+                  <controlProperties>
+                    <bold>true</bold>
+                    <size>16</size>
+                    <text>31-01-2014%20@%2010%20pm</text>
+                  </controlProperties>
+                </control>
+                <control controlID="3" controlTypeID="com.balsamiq.mockups::Button" x="702" y="8" w="30" h="25" measuredW="40" measuredH="27" zOrder="3" locked="false" isInGroup="12">
+                  <controlProperties>
+                    <bold>true</bold>
+                    <icon>Trash2Icon%7Cxsmall</icon>
+                    <text/>
+                  </controlProperties>
+                </control>
+                <control controlID="4" controlTypeID="com.balsamiq.mockups::Button" x="662" y="8" w="34" h="24" measuredW="40" measuredH="27" zOrder="4" locked="false" isInGroup="12">
+                  <controlProperties>
+                    <icon>PencilIcon%7Cxsmall</icon>
+                    <text/>
+                  </controlProperties>
+                </control>
+              </groupChildrenDescriptors>
+            </control>
+            <control controlID="13" controlTypeID="__group__" x="0" y="32" w="738" h="41" measuredW="738" measuredH="41" zOrder="1" locked="false" isInGroup="8">
+              <controlProperties>
+                <controlName>Someone%20elses%20event</controlName>
+              </controlProperties>
+              <groupChildrenDescriptors>
+                <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="738" h="41" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="13"/>
+                <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="15" y="10" w="154" h="21" measuredW="151" measuredH="24" zOrder="1" locked="false" isInGroup="13">
+                  <controlProperties>
+                    <bold>true</bold>
+                    <size>16</size>
+                    <text>GMH%2C%20Vane%20Day%20Bar</text>
+                  </controlProperties>
+                </control>
+                <control controlID="2" controlTypeID="com.balsamiq.mockups::Label" x="491" y="8" w="-1" h="-1" measuredW="151" measuredH="24" zOrder="2" locked="false" isInGroup="13">
+                  <controlProperties>
+                    <bold>true</bold>
+                    <size>16</size>
+                    <text>27-12-2013%20@%208%20pm</text>
+                  </controlProperties>
+                </control>
+              </groupChildrenDescriptors>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="34" controlTypeID="__group__" x="987" y="64" w="484" h="556" measuredW="484" measuredH="556" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName>add%20event%20dialog</controlName>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::TitleWindow" x="0" y="0" w="484" h="556" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="34">
+          <controlProperties>
+            <close>true</close>
+            <dragger>true</dragger>
+            <maximizeRestore>false</maximizeRestore>
+            <text>Add%20Event</text>
+            <topheight>26</topheight>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::FieldSet" x="20" y="39" w="449" h="106" measuredW="200" measuredH="170" zOrder="1" locked="false" isInGroup="34">
+          <controlProperties>
+            <text>Band%20Description</text>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::TextInput" x="107" y="67" w="347" h="-1" measuredW="42" measuredH="27" zOrder="2" locked="false" isInGroup="34">
+          <controlProperties>
+            <text>GMH</text>
+          </controlProperties>
+        </control>
+        <control controlID="3" controlTypeID="com.balsamiq.mockups::Label" x="43" y="71" w="-1" h="-1" measuredW="48" measuredH="21" zOrder="3" locked="false" isInGroup="34">
+          <controlProperties>
+            <bold>true</bold>
+            <text>Name%20%3A</text>
+          </controlProperties>
+        </control>
+        <control controlID="4" controlTypeID="com.balsamiq.mockups::Label" x="43" y="109" w="-1" h="-1" measuredW="49" measuredH="21" zOrder="4" locked="false" isInGroup="34">
+          <controlProperties>
+            <bold>true</bold>
+            <text>Genre%20%3A</text>
+          </controlProperties>
+        </control>
+        <control controlID="5" controlTypeID="com.balsamiq.mockups::TextInput" x="107" y="106" w="347" h="-1" measuredW="104" measuredH="27" zOrder="5" locked="false" isInGroup="34">
+          <controlProperties>
+            <text>Punk%20/%20Hardcore</text>
+          </controlProperties>
+        </control>
+        <control controlID="6" controlTypeID="com.balsamiq.mockups::FieldSet" x="20" y="158" w="449" h="162" measuredW="200" measuredH="170" zOrder="6" locked="false" isInGroup="34">
+          <controlProperties>
+            <text>Venue%20Description</text>
+          </controlProperties>
+        </control>
+        <control controlID="7" controlTypeID="com.balsamiq.mockups::Label" x="43" y="188" w="-1" h="-1" measuredW="48" measuredH="21" zOrder="7" locked="false" isInGroup="34">
+          <controlProperties>
+            <bold>true</bold>
+            <text>Name%20%3A</text>
+          </controlProperties>
+        </control>
+        <control controlID="8" controlTypeID="com.balsamiq.mockups::TextInput" x="107" y="182" w="347" h="-1" measuredW="92" measuredH="27" zOrder="8" locked="false" isInGroup="34">
+          <controlProperties>
+            <text>Vane%20Day%20Bar</text>
+          </controlProperties>
+        </control>
+        <control controlID="9" controlTypeID="com.balsamiq.mockups::Label" x="28" y="229" w="-1" h="-1" measuredW="63" measuredH="21" zOrder="9" locked="false" isInGroup="34">
+          <controlProperties>
+            <bold>true</bold>
+            <text>Address%20%3A</text>
+          </controlProperties>
+        </control>
+        <control controlID="10" controlTypeID="com.balsamiq.mockups::TextInput" x="107" y="224" w="347" h="-1" measuredW="238" measuredH="27" zOrder="10" locked="false" isInGroup="34">
+          <controlProperties>
+            <text>10%20rue%20de%20stalingrad%2C%2078500%20Sartrouville</text>
+          </controlProperties>
+        </control>
+        <control controlID="11" controlTypeID="com.balsamiq.mockups::Label" x="28" y="268" w="-1" h="-1" measuredW="64" measuredH="21" zOrder="11" locked="false" isInGroup="34">
+          <controlProperties>
+            <bold>true</bold>
+            <text>Website%20%3A</text>
+          </controlProperties>
+        </control>
+        <control controlID="12" controlTypeID="com.balsamiq.mockups::TextInput" x="108" y="265" w="347" h="-1" measuredW="175" measuredH="27" zOrder="12" locked="false" isInGroup="34">
+          <controlProperties>
+            <text>http%3A//www.gmhtheband.com</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="35" controlTypeID="com.balsamiq.mockups::Arrow" x="654" y="180" w="344" h="17" measuredW="150" measuredH="100" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <direction>bottom</direction>
+        <text/>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

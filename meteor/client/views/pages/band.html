@@ -7,7 +7,7 @@
 		{{band.description}}
 	</div> -->
 
-	<div id="concerts">
+	<div id="concert-details">
 	{{#each concerts}}
 		<div class="concert">
 			<h2>
@@ -36,12 +36,16 @@
 			</h2>
 
 			<div class="description">
-				Vote pour les chansons que tu voudrais entendre au concert
+				{{#if currentUser}}
+					Vote pour les chansons que tu voudrais entendre au concert
+				{{else}}
+					Connecte-toi pour pouvoir voter pour les chansons que tu voudrais entendre au concert
+				{{/if}}
 			</div>
 
 			<ul class="songs-list">
 			{{#each songs}}
-				<li {{#if hasMyVote}}class="selected"{{/if}}>
+				<li class="{{#if hasMyVote}}selected{{/if}}{{#if currentUser}} connected{{/if}}">
 					{{#if currentUser}}
 					<span class="checkbox">
 						{{#if hasMyVote}}<span>&#10004;</span>{{/if}}

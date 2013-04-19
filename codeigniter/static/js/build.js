@@ -1,3 +1,38 @@
+/*! JukeBox Live - v0.1.0 - 2013-01-31
+* http://jukeboxlive.com/
+* Copyright (c) 2013 Carl Ogren; Free Beer License */
+
+(function(window, $) {
+/**
+ * JukeBox Live main app controller
+ */
+
+// init marionette application
+JBL = new Backbone.Marionette.Application();
+
+
+// add regions
+JBL.addRegions({
+	"content": "#content"
+});
+
+
+// init history when routing has started
+JBL.vent.on("routing:started", function() {
+	if (!Backbone.History.started) {
+		Backbone.history.start();
+	}
+});
+
+
+// Start marionette app
+$(function() {
+	log("[main] Starting JukeBox Live application");
+	JBL.start();
+});
+
+
+})(window, jQuery);
 /*
  * Log function
  */
@@ -374,3 +409,37 @@ $.fn.hasScrollBar = function(orientation) {
 
 
 })(window, jQuery);
+(function() {
+/**
+ * Band App controller
+ */
+JBL.BandApp = (function() {
+	// create empty object for public methods
+	var BandApp = {};
+
+
+	// create a layout
+	var Layout = Backbone.Marionette.Layout.extend({
+		// dust template
+		"template": "band-app-layout",
+
+		// regions in the layout
+		"regions": {
+			"description": "#description",
+			"songs": "#songs"
+		}
+	});
+
+
+	
+
+
+
+	// return public methods
+	return BandApp;
+
+})();
+
+
+
+})();

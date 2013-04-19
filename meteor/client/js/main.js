@@ -140,7 +140,7 @@ jb.events.init({
  * Initialize jb.router
  */
 jb.router.init({
-	"/": { tpl: "band" },
+	"/": { tpl: "concerts" },
 
 	// band pages
 	"/band/:name": {
