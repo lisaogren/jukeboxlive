@@ -56,7 +56,7 @@ Template.band.concerts = function() {
 			// Retrieve the songs of the concert
 			concerts[i].songs = Songs.find({ "concertId": concerts[i]._id }, {
 				sort: { "position": 1 }
-			});
+			}).fetch();
 		}
 
 		return concerts;
@@ -119,20 +119,11 @@ Template.band.events = {
 			if (hasMyVote) {
 				log("[band.events] Removing user vote for song: " + this.name, log.DEBUG);
 
-				Songs.update({ "_id": this._id, "votes.user_id": Meteor.userId() }, {
-					$unset: { "votes.$": 1 }
-				});
+				Meteor.call("unvote", this._id);
 			} else {
 				log("[band.events] Adding user vote for song: " + this.name, log.DEBUG);
 
-				Songs.update({ "_id": this._id }, {
-					$push: {
-						"votes": {
-							"user_id": Meteor.userId(),
-							"date": new Date()
-						}
-					}
-				});
+				Meteor.call("vote", this._id);
 			}
 		} else {
 			log("[band.events] Could find song with id " + this._id, log.DEBUG);

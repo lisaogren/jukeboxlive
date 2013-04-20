@@ -82,4 +82,21 @@ Meteor.methods({
 	 * Update an existing concert
 	 */
 	// updateConcert: function() {}
+
+	"vote": function(song_id) {
+		Songs.update({ "_id": song_id }, {
+			$push: {
+				"votes": {
+					"user_id": Meteor.userId(),
+					"date": new Date()
+				}
+			}
+		});
+	},
+
+	"unvote": function(song_id) {
+		Songs.update({ "_id": song_id, "votes.user_id": Meteor.userId() }, {
+			$unset: { "votes.$": 1 }
+		});
+	}
 });
