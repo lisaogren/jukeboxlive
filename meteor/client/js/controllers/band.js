@@ -9,13 +9,13 @@
  * Initialize a band page. Given as a callback to page.js.
  * Recieves a context object from page.js with a name param
  * to find the corresponding band.
- * Stores the value in the "currentBand" session field
+ * Stores the value in the "current_band" session field
  * 
  * @param  {Context} ctx The page.js context object
  */
 Template.band.init = function(ctx) {
 	// Store the current selected band in session
-	Session.set("currentBand", ctx.params.name);
+	Session.set("current_band", ctx.params.name);
 };
 
 
@@ -24,7 +24,7 @@ Template.band.init = function(ctx) {
  * @return {Band} The band object
  */
 Template.band.band = function() {
-	return Bands.findOne({ "name": Session.get("currentBand") });
+	return Bands.findOne({ "name": Session.get("current_band") });
 };
 
 
@@ -34,7 +34,7 @@ Template.band.band = function() {
  */
 Template.band.concerts = function() {
 	// Find the band
-	var band = Bands.findOne({ "name": Session.get("currentBand") });
+	var band = Bands.findOne({ "name": Session.get("current_band") });
 
 	if (band) {
 		// Retrieve the band's list of concerts

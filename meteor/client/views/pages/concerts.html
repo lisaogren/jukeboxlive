@@ -1,5 +1,5 @@
 <template name="concerts">
-{{#if currentPage}}
+{{#if current_page}}
 
 	<h2 class="page-title">
 		<span>List of events</span>
@@ -11,7 +11,7 @@
 	<ul id="concerts">
 		{{#each concerts}}
 		<li class="concert">
-			<a href="/band/{{band.name}}" class="ui-helper-clearfix">
+			<a href="/concert/{{_id}}" class="ui-helper-clearfix">
 				<span class="title">{{label}}, {{venue.name}}</span>
 				<span class="date">{{formated_date}} {{formated_time}}</span>
 			</a>

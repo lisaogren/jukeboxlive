@@ -13,40 +13,40 @@ Meteor.startup(function() {
 	// Test data for the application
 	if (Bands.find().count() === 0) {
 		// Bands
-		var bandsList = [
+		var bands_list = [
 			{ "name": "GMH", "description": "Melodic Punk Metal", "origin": "France" }
 			// { "name": "Rock'Ave", "description": "Rock'n'Roll Blues", "origin": "France" },
 			// { "name": "Roux Libres", "description": "Chanson française", "origin": "France" }
 		];
 
-		var venuesList = [
+		var venues_list = [
 			{ "name": "Vane Day Bar", "address": "30 avenue Pasteur", "zip": "93100", "city": "Montreuil" }
 		];
 
 		// Loop through each venue
-		for (var i in venuesList) {
+		for (var i in venues_list) {
 			// Insert venue
-			Venues.insert(venuesList[i]);
+			Venues.insert(venues_list[i]);
 		}
 
 		// Loop through each bands
-		for (var i in bandsList) {
+		for (var i in bands_list) {
 			// Insert band
-			var bandId = Bands.insert(bandsList[i]),
-				venueId = Venues.findOne({ "name": "Vane Day Bar" })._id;
+			var band_id = Bands.insert(bands_list[i]),
+				venue_id = Venues.findOne({ "name": "Vane Day Bar" })._id;
 
 			// Create a concert for the band
-			var concertId = Concerts.insert({
-				"label": "Concert " + bandsList[i].name,
+			var concert_id = Concerts.insert({
+				"label": "Concert " + bands_list[i].name,
 				"date": new Date(),
-				"venueId": venueId,
-				"bandId": bandId
+				"venue_id": venue_id,
+				"band_id": band_id
 			});
 
 			for (var j = 0; j < 10; j++) {
 				Songs.insert({
 					"name": "Song #" + (j + 1),
-					"concertId": concertId,
+					"concert_id": concert_id,
 					"position": (j + 1),
 					"votes": []
 				});

@@ -257,7 +257,7 @@ var dateFormat = function () {
 
 // Some common format strings
 dateFormat.masks = {
-	"default":      "dddd d mmmm yyyy @ HH:MM",
+	"default":      "dddd dS mmmm yyyy @ H:MM tt",
 	shortDateEn:      "mm/dd/yy",
 	shortDateFr:      "dd/mm/yyyy",
 	mediumDate:     "mmm d, yyyy",
@@ -268,20 +268,31 @@ dateFormat.masks = {
 	longTime:       "h:MM:ss TT Z",
 	isoDate:        "yyyy-mm-dd",
 	isoTime:        "HH:MM:ss",
-	time: 			"HH:MM",
+	time: 			"H:MM tt",
 	isoDateTime:    "yyyy-mm-dd'T'HH:MM:ss",
 	isoUtcDateTime: "UTC:yyyy-mm-dd'T'HH:MM:ss'Z'"
 };
 
 // Internationalization strings
+// dateFormat.i18n = {
+// 	dayNames: [
+// 		"Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam",
+// 		"Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"
+// 	],
+// 	monthNames: [
+// 		"Jan", "Fev", "Mar", "Avr", "Mai", "Juin", "Juil", "Aou", "Sep", "Oct", "Nov", "Dec",
+// 		"Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"
+// 	]
+// };
+
 dateFormat.i18n = {
 	dayNames: [
-		"Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam",
-		"Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"
+		"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat",
+		"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
 	],
 	monthNames: [
-		"Jan", "Fev", "Mar", "Avr", "Mai", "Juin", "Juil", "Aou", "Sep", "Oct", "Nov", "Dec",
-		"Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"
+		"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+		"January", "February", "March", "April", "May", "June", "July", "August", "Septembre", "Octobre", "Novembre", "Decembre"
 	]
 };
 

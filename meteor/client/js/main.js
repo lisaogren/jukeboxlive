@@ -3,8 +3,9 @@
  *  INIT SESSION
  * -----------------------------------------------------------------------------
  */
-Session.set("currentPage", "band");
-Session.set("currentBand", "GMH");
+Session.set("current_page", "concerts");
+Session.set("current_band", null);
+Session.set("current_concert", null);
 // Session.set('login_error', "");
 
 
@@ -80,9 +81,9 @@ window.jb = (function() {
 					};
 				}
 
-				if (Template[data.tpl] && !Template[data.tpl].currentPage) {
-					Template[data.tpl].currentPage = function() {
-						return Session.get('currentPage') === data.tpl;
+				if (Template[data.tpl] && !Template[data.tpl].current_page) {
+					Template[data.tpl].current_page = function() {
+						return Session.get('current_page') === data.tpl;
 					};
 				}
 
@@ -90,11 +91,10 @@ window.jb = (function() {
 					log("[jb.router] Detected route " + route + ": " + data.tpl, log.DEBUG);
 
 					// Store current page in session
-					Session.set("currentPage", data.tpl);
+					Session.set("current_page", data.tpl);
 					
 					// If a callback was given execute it
-					if ($.isFunction(data.callback))
-						data.callback(ctx);
+					if ($.isFunction(data.callback)) { data.callback(ctx); }
 				});
 			},
 
@@ -146,6 +146,11 @@ jb.router.init({
 	"/band/:name": {
 		tpl: "band",
 		callback: Template.band.init
+	},
+
+	"/concert/:id": {
+		tpl: "concert_detail",
+		callback: Template.concert_detail.init
 	}
 });
 
