@@ -9,14 +9,14 @@
  * Initialize a concert_detail page. Given as a callback to page.js.
  * Recieves a context object from page.js with a name param
  * to find the corresponding band.
- * Stores the value in the "current_concert" session field
+ * Stores the value in the "concert_id" session field
  * 
  * @param  {Context} ctx The page.js context object
  */
 Template.concert_detail.init = function(ctx) {
-	console.log("Current page is now concert_detail");
 	// Store the current selected band in session
-	Session.set("current_concert", ctx.params.id);
+	Session.set("concert_id", ctx.params.id);
+	Session.set("concert_edit", false);
 };
 
 
@@ -52,7 +52,7 @@ Template.concert_detail.vote_count = function() {
 
 Template.concert_detail.concert = function() {
 	// Find the band
-	var concert = Concerts.findOne({ "_id": Session.get("current_concert") });
+	var concert = Concerts.findOne({ "_id": Session.get("concert_id") });
 
 	if (concert) {
 		concert.ok = true;
@@ -94,7 +94,7 @@ Template.concert_detail.concert = function() {
 	} else {
 		return {
 			"ok": false,
-			"err": "Could not find any concerts with id: " + Session.get("current_concert")
+			"err": "Could not find any concerts with id: " + Session.get("concert_id")
 		};
 	}
 };
