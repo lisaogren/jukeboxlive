@@ -1,28 +1,23 @@
-<template name="band">
+<template name="concert_detail">
 {{#if current_page}}
 
-	<!-- <h1>{{band.name}}</h1>
-	
-	<div class="description">
-		{{band.description}}
-	</div> -->
 
-	<div id="concert-details">
-	{{#each concerts}}
-		<div class="concert">
+	{{#with concert}}
+		{{#if ok}}
+		<div id="concert-details">
 			<h2>
 				<span>{{label}}, {{venue.name}} @ {{formated_time}}, {{formated_date}}</span>
 			</h2>
 
 			<div class="description">
 				<div class="ui-helper-clearfix item">
-					<span class="label">Quand ?</span>
+					<span class="label">When ?</span>
 					<span class="content">
 						{{formated_datetime}}
 					</span>
 				</div>
 				<div class="ui-helper-clearfix item">
-					<span class="label">Où ?</span>
+					<span class="label">Where ?</span>
 					<span class="content">
 						{{venue.name}}<br>
 						{{venue.address}}<br>
@@ -32,38 +27,42 @@
 			</div>
 
 			<h2>
-				<span>Chansons</span>
+				<span>Songs</span>
 			</h2>
 
 			<div class="description">
 				{{#if currentUser}}
-					Vote pour les chansons que tu voudrais entendre au concert
+					Vote for the songs you would like to hear at the gig
 				{{else}}
-					Connecte-toi pour pouvoir voter pour les chansons que tu voudrais entendre au concert
+					Login to vote for the songs you would like to hear at the gig
 				{{/if}}
 			</div>
 
 			<ul class="songs-list">
 			{{#each songs}}
-				<li class="{{#if hasMyVote}}selected{{/if}}{{#if currentUser}} connected{{/if}}">
+				<li class="{{#if has_my_vote}}selected{{/if}}{{#if currentUser}} connected{{/if}}">
 					{{#if currentUser}}
 					<span class="checkbox">
-						{{#if hasMyVote}}<span>&#10004;</span>{{/if}}
+						{{#if has_my_vote}}<span>&#10004;</span>{{/if}}
 					</span>
 					{{/if}}
 					<span>{{name}}</span>
 					{{#if currentUser}}
 					<span class="other-votes" title="Le nombre total de votes pour cette chanson">
 						<img src="/images/thumbsup.png">
-						{{voteCount}}
+						{{vote_count}}
 					</span>
 					{{/if}}
 				</li>
 			{{/each}}
 			</ul>
 		</div>
-	{{/each}}
-	</div>
+		
+
+		{{else}}
+			<div class="error">{{concert.err}}</div>
+		{{/if}}
+	{{/with}}
 
 {{/if}}
 </template>

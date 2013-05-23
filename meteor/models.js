@@ -64,22 +64,27 @@ Songs.allow({
  */
 Meteor.methods({
 	/**
-	 * Create a new band in the collection
+	 * Vote for a song
+	 * @param  {string} song_id  The minimongo id of the song
 	 */
-	// createBand: function() {},
+	"vote": function(song_id) {
+		Songs.update({ "_id": song_id }, {
+			$push: {
+				"votes": {
+					"user_id": Meteor.userId(),
+					"date": new Date()
+				}
+			}
+		});
+	},
 
 	/**
-	 * Update an existing band in the collection
+	 * Unvote for a song
+	 * @param  {string} song_id  The minimongo id of the song
 	 */
-	// updateBand: function() {},
-
-	/**
-	 * Create a concert
-	 */
-	// createConcert: function() {},
-
-	/**
-	 * Update an existing concert
-	 */
-	// updateConcert: function() {}
+	"unvote": function(song_id) {
+		Songs.update({ "_id": song_id, "votes.user_id": Meteor.userId() }, {
+			$unset: { "votes.$": 1 }
+		});
+	}
 });
