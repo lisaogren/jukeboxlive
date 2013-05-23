@@ -1,7 +1,7 @@
 /* Site dimensions and colors */
 
 main_width = 100%
-min_width = 400px
+min_width = 455px
 max_width = 1000px
 background_color = #33342D
 content_background_color = #46483E
@@ -59,9 +59,14 @@ button {
 
 #header {
 	width: 100%;
+	height: 74px;
+	min-width: min_width;
 	border-bottom: black solid 1px;
 	background: content_background_color;
 	text-align: center;
+	position: fixed;
+	top: 0;
+	left: 0;
 
 	& > div {
 		max-width: max_width;
@@ -116,7 +121,8 @@ button {
 }
 
 #content {
-	margin: 10px auto 20px auto;
+	margin: 0px auto 20px auto;
+	padding-top: 110px;
 	// background: content_background_color;
 	color: text_color;
 	max-width: max_width;
@@ -184,16 +190,43 @@ button {
 	}
 }
 
+#concert-edit {
+	div.input-block {
+		margin: 0 20px;
+	}
+
+	input {
+		color: text_color;
+		background: background_color;
+		outline: none;
+		border: border_grey dashed 1px;
+		border-width: 0 0 1px 0;
+		width: 250px;
+	}
+
+	input.title-input {
+		border: 0;
+		width: 100%;
+		height: 30px;
+		font-size: 20px;
+		font-weight: bold;
+	}
+}
 
 #concert-details {
 	h2 {
-		padding-bottom: 3px;
-		border-bottom: border_grey solid 1px;
+		font-size: 20px;
+		margin-bottom: 5px;
 
 		span {
 			display: block;
 			padding: 0 20px;
 		}
+	}
+
+	.underline {
+		border-bottom: border_grey solid 1px;
+		margin-bottom: 20px;
 	}
 
 	.description {
@@ -283,3 +316,18 @@ button {
 		}
 	}
 }
+
+
+
+
+/* css for timepicker */
+.ui-timepicker-div .ui-widget-header { margin-bottom: 8px; }
+.ui-timepicker-div dl { text-align: left; }
+.ui-timepicker-div dl dt { height: 25px; margin-bottom: -25px; }
+.ui-timepicker-div dl dd { margin: 0 10px 10px 65px; }
+.ui-timepicker-div td { font-size: 90%; }
+.ui-tpicker-grid-label { background: none; border: none; margin: 0; padding: 0; }
+
+.ui-timepicker-rtl{ direction: rtl; }
+.ui-timepicker-rtl dl { text-align: right; }
+.ui-timepicker-rtl dl dd { margin: 0 65px 10px 10px; }
