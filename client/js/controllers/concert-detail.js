@@ -13,10 +13,10 @@
  * 
  * @param  {Context} ctx The page.js context object
  */
-Template.concert_detail.init = function(ctx, data) {
-	if (typeof ctx.params.id !== "undefined") {
+Template.concert_detail.init = function(data) {
+	if (typeof data.id !== "undefined") {
 		// Store the current selected concert in session
-		Session.set("concert_id", ctx.params.id);
+		Session.set("concert_id", data.id);
 	} else {
 		Session.set("concert_id", null);
 	}

@@ -36,92 +36,43 @@ window.jb = (function() {
 			}
 		},
 
-		router: {
-			routes: null,
 
-			// constructor
-			init: function(routes) {
-				// Store routes to bind
-				this.routes = routes;
-				this.page = window.page;
+		"router": {
 
-				this.register();
-
-				this.page();
-			},
-
-
-			/**
-			 * Register routes given at initialization to page.js
-			 */
-			register: function() {
+			"init": function(routes) {
 				var self = this;
 
-				for (var i in self.routes) {
-					self.route(i, self.routes[i]);
-				}
+				self.Router = Backbone.Router.extend({ "routes": {} });
 
-				self.route("*", self.notfound);
+				self.register(routes);
+
+				self.router = new self.Router();
+
+				Backbone.history.start({ "pushState": true });
 			},
 
+			"register": function(routes) {
+				var self = this,
+					route;
 
-			/**
-			 * Declare a route to page.js
-			 * @param  {string} route The route to map
-			 * @param  {object} data  An object containing the template name and optionnaly an initialization callback
-			 *                        Example: {tpl: "home", callback: InitHomePage}
-			 */
-			route: function(route, data) {
-				if ($.isFunction(data)) {
-					var fn = data;
+				for (var i in routes) {
+					route = routes[i];
 
-					data = {
-						tpl: null,
-						callback: fn,
-						data: {}
+					self.Router.prototype.routes[i] = route.tpl;
+
+					self.Router.prototype[route.tpl] = function() {
+						Session.set("current_page", route.tpl);
+						Template[route.tpl].init.call(Template[route.tpl], _.extend(route.data, arguments));
 					};
-				}
 
-				if (Template[data.tpl]) {
-					if (!$.isFunction(data.callback) && $.isFunction(Template[data.tpl].init)) {
-						data.callback = Template[data.tpl].init;
-					}
-
-					if (Template[data.tpl] && !Template[data.tpl].current_page) {
-						Template[data.tpl].current_page = function() {
-							return Session.get('current_page') === data.tpl;
+					if (!Template[route.tpl].current_page) {
+						Template[route.tpl].current_page = function() {
+							return Session.get('current_page') === route.tpl;
 						};
 					}
 				}
-
-				self.page(route, function(ctx, inf) {
-					log("[jb.router] Detected route " + route + ": " + data.tpl, log.DEBUG);
-
-					// Store current page in session
-					Session.set("current_page", data.tpl);
-					
-					// If a callback was given execute it
-					if ($.isFunction(data.callback)) { data.callback(ctx, data.data); }
-				});
-			},
-
-
-			/**
-			 * Navigate to a specific route
-			 * @param  {string} url The route to be triggered
-			 */
-			go: function(url) {
-				this.page.show(url);
-			},
-
-
-			/**
-			 * Executed when a non existing route is called
-			 * @param  {Context} ctx Page.js context object
-			 */
-			notfound: function(ctx) {
-				console.log("Could not find the page you are looking for");
 			}
+
 		}
 	};
 
@@ -147,24 +98,16 @@ jb.events.init({
  * Initialize jb.router
  */
 jb.router.init({
-	"/": { tpl: "concert_list" },
-
-	// band pages
-	"/band/:name": {
-		tpl: "band",
-		callback: Template.band.init
-	},
-
-	"/concert/add": {
+	"concert/add": {
 		"tpl": "concert_detail",
 		"data": { "edit": true }
 	},
 
-	"/concert/:id": {
+	"concert/:id": {
 		tpl: "concert_detail"
 	},
 
-	"/concert/:id/edit": {
+	"concert/:id/edit": {
 		tpl: "concert_detail",
 		data: { "edit": true }
 	}
