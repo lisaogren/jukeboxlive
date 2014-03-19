@@ -1,0 +1,14 @@
+<template name="eventPage">
+  <div class="event">
+    <div class="title">{{title}}</div>
+    <div class="block">
+      <label for="when">When ?</label>
+      <span name="when" class="content">{{formattedDate}}</span>
+    </div>
+    <div class="block">
+      <label for="where">Where ?</label>
+      <span name="where" class="content">{{venue.name}} - {{venue.address}}</span>
+    </div>
+    <div class="title">Songs</div>
+  </div>
+</template>

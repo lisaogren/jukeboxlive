@@ -1,0 +1,28 @@
+<template name="bandPage">
+  <div class="band">
+    <div class="title">{{name}}</div>
+    <div class="clearfix block">
+      <label for="description">Description :</label>
+      <span name="description" class="content">{{nl2br description}}</span>
+    </div>
+    <form>
+      <div class="title">
+        Songs
+        <span class="description">
+          {{#if isOwner}}
+          <a href="#" class="add-song">Add song</a>
+          {{/if}}
+        </span>
+      </div>
+      <div class="clearfix block">
+        <ul class="list">
+          {{#each songs}}
+            {{> songItem}}
+          {{else}}
+            <li class="error">This band does not have any songs yet</li>
+          {{/each}}
+        </ul>
+      </div>
+    </form>
+  </div>
+</template>

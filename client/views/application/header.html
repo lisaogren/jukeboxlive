@@ -1,0 +1,21 @@
+<template name="header">
+	<header>
+		<div class="clearfix inner">
+			<h1>
+				<a href="{{pathFor 'eventsList'}}">Jukebox Live</a>
+			</h1>
+			
+			<ul class="menu">
+				<li>
+					<a href="{{pathFor 'eventsList'}}">Events</a>
+				</li>
+				<li>|</li>
+				<li>
+					<a href="{{pathFor 'bandsList'}}">Bands</a>
+				</li>
+			</ul>
+			
+			{{loginButtons align="right"}}
+		</div>
+	</header>
+</template>

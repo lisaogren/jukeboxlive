@@ -1,9 +1,10 @@
 {
-  "meteor": {
-    "git": "https://github.com/meteor/meteor.git",
-    "branch": "master"
-  },
   "packages": {
-    "router": {}
+    "iron-router": {},
+    "iron-router-progress": {},
+    "moment": {},
+    "spin": {},
+    "jqueryui": {},
+    "underscore-string-latest": {}
   }
 }

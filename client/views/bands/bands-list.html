@@ -1,0 +1,31 @@
+<template name="bandsList">
+  <h3 class="clearfix">
+    List of bands
+    <div class="buttons">
+    {{#if currentUser}}
+      <a href="{{pathFor 'bandSubmit'}}">Add</a> |
+      Viewing :
+      <a href="#" class="show-my-bands">
+        {{#if viewAll}}
+        <span class="all">All the bands</span>
+        {{else}}
+        <span class="my">My bands only</span>
+        {{/if}}
+      </a>
+    {{/if}}
+    </div>
+  </h3>
+  <ul class="list">
+    {{#each bands}}
+      {{> bandItem}}
+    {{else}}
+      <li class="error">
+        {{#if viewAll}}
+        No bands have been registered yet...
+        {{else}}
+        You have not registered any bands yet, click the "Add" button to register a band
+        {{/if}}
+      </li>
+    {{/each}}
+  </ul>
+</template>

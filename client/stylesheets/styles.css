@@ -1,0 +1,266 @@
+/* General structure styles */
+
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: Oregano, serif;
+	font-size: 20px;
+}
+
+#spinner { height: 300px }
+
+a {
+	color: #777;
+	text-decoration: none;
+}
+a:hover, a:focus {
+	color: black;
+}
+
+
+/* Header styles */
+
+header {
+	border-bottom: #aaa solid 1px;
+	margin-bottom: 20px;
+}
+
+header > .inner {
+	padding: 5px 20px;
+	max-width: 1024px;
+	margin: auto;
+}
+
+header h1 {
+	margin: 0 20px 0 0;
+	padding: 0;
+	float: left;
+	font-size: 1.5em;
+}
+header h1 a {
+	color: black;
+}
+
+header ul.menu {
+	list-style: none;
+	margin: 10px 0 0 0;
+	padding: 0;
+	float: left;
+}
+header ul.menu li {
+	float: left;
+	margin-right: 10px;
+}
+
+
+/* Login UI Overrides */
+
+#login-buttons {
+	float: right;
+	margin: 10px 0px 0 0;
+}
+
+#login-buttons .login-link-text {
+	text-decoration: none;
+}
+
+
+/* jQuery UI overrides */
+
+.ui-autocomplete {
+	max-height: 200px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	font-family: Oregano, serif;
+	font-size: 0.9em;
+}
+
+.ui-datepicker {
+	font-size: 0.7em;
+}
+
+
+/* Main container */
+
+#main > .inner {
+	padding: 5px 30px;
+	max-width: 1024px;
+	margin: auto;
+}
+
+
+/* Lists */
+
+#main h3 {
+	margin-top: 0;
+	margin-bottom: 10px;
+}
+#main h3 .buttons {
+	float: right;
+	font-size: 0.7em;
+	margin-top: 10px;
+}
+
+#main ul.list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#main ul.list li {
+	border: #aaa solid 1px;
+	box-sizing: border-box;
+	padding: 10px;
+	cursor: pointer;
+	margin-bottom: 15px;
+	position: relative;
+}
+#main ul.list li:first-child {
+	border-radius: 3px 3px 0 0;
+}
+#main ul.list li:last-child {
+	border-radius: 0 0 3px 3px;
+	margin-bottom: 0;
+}
+#main ul.list li:only-child {
+	border-radius: 3px;
+}
+#main ul.list li:hover {
+	background: #eee;
+}
+#main ul.list li.selected {
+	background: #90ee90;
+}
+#main ul.list li.error {
+	cursor: default;
+}
+#main ul.list li.error:hover {
+	background: #f0b2b2;
+}
+
+#main ul.list li a {
+	display: block;
+	color: black;
+}
+
+#main ul.list li .title {
+	float: left;
+}
+
+#main ul.list li .when {
+	float: right;
+}
+
+#main ul.list li .buttons {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+}
+
+
+/* Event submit form */
+
+
+.event-form .list input {
+	display: none;
+}
+
+
+/* Helper classes */
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+	zoom: 1;
+}
+
+.block {
+	margin-bottom: 20px;
+}
+.block label {
+	display: block;
+	float: left;
+	text-align: right;
+	margin-right: 20px;
+	font-size: 1.2em;
+	width: 150px;
+	padding: 5px;
+	position: relative;
+	top: 3px;
+}
+.block > span.content {
+	display: table;
+	position: relative;
+	top: 4px;
+	font-size: 1.2em;
+	padding: 5px;
+}
+div.title {
+	border-bottom: #aaa solid 1px;
+	margin-bottom: 20px;
+	padding: 0 10px;
+	font-size: 1.7em;
+	box-sizing: border-box;
+}
+div.title span.description {
+	font-size: 0.6em;
+	color: #aaa;
+	float: right;
+	display: block;
+	margin-top: 13px;
+}
+
+.error {
+	border: #aaa solid 1px;
+	border-radius: 3px;
+	background: #f0b2b2;
+	box-sizing: border-box;
+	padding: 10px;
+}
+
+.hidden {
+	display: none;
+}
+
+
+
+/* General form styles */
+
+form input, form textarea {
+	font-family: Oregano, serif;
+	font-size: 1.2em;
+	outline: none;
+	padding: 5px;
+}
+
+form .block input {
+	border: #aaa dotted 1px;
+	border-width: 0 0 1px 0;
+	width: 300px;
+	box-sizing: border-box;
+}
+form .block input:focus {
+	border-bottom-style: solid;
+}
+form .block textarea {
+	width: 70%;
+	min-height: 300px;
+	border: none;
+	resize: vertical;
+}
+form .block.buttons {
+	border-top: #aaa solid 1px;
+	padding: 10px
+}
+
+form .title input {
+	border: none;
+	width: 100%;
+	font-size: 1em;
+	outline: none;
+}

@@ -1,0 +1,45 @@
+<template name="eventSubmit">
+	<form class="event-form">
+		<div class="title">
+			<input type="text" name="title" value="" placeholder="Enter the event title here ..." />
+		</div>
+		<div class="clearfix block">
+			<label for="who">Who ?</label>
+			<input type="text" name="who" value="" placeholder="Band name" />
+			<input type="hidden" name="who-id" value="" />
+		</div>
+		<div class="clearfix block">
+			<label for="when">When ?</label>
+			<input type="text" name="when" value="" placeholder="jj/mm/aaaa" />
+		</div>
+		<div class="clearfix block">
+			<label for="where">Where ?</label>
+			<input type="text" name="where" value="" placeholder="Venue name" />
+			<input type="hidden" name="where-id" value="" />
+		</div>
+
+		<div class="title">
+			Songs
+			<span class="description">
+				Select songs by clicking on them
+			</span>
+		</div>
+		<div class="clearfix block">
+			{{#if bandSelected}}
+			<ul class="list">
+				{{#each songs}}
+					{{> songSelectItem}}
+				{{else}}
+					<li class="error">The band does not have any songs listed yet, go to the band's page to add songs</li>
+				{{/each}}
+			</ul>
+			{{else}}
+			<div class="error">Select a band to see its songs</div>
+			{{/if}}
+		</div>
+
+		<div class="clearfix block buttons">
+			<button type="submit">Submit</button>
+		</div>
+	</form>
+</template>

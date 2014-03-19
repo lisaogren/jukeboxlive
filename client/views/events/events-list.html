@@ -1,0 +1,17 @@
+<template name="eventsList">
+  <h3 class="clearfix">
+    List of events
+    <div class="buttons">
+    {{#if currentUser}}
+      <a href="{{pathFor 'eventSubmit'}}">Add</a>
+    {{/if}}
+    </div>
+  </h3>
+  <ul class="list">
+    {{#each events}}
+      {{> eventItem}}
+    {{else}}
+      <li class="error">Sorry, no events registered yet</li>
+    {{/each}}
+  </ul>
+</template>

@@ -1,0 +1,11 @@
+<template name="songItem">
+	<li class="item">
+		{{title}}
+		
+		{{#if isOwner}}
+		<span class="buttons">
+			<a href="#" class="delete">Delete</a>
+		</span>
+		{{/if}}
+	</li>
+</template>

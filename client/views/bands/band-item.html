@@ -1,0 +1,12 @@
+<template name="bandItem">
+  <li class="item">
+    <a href="{{pathFor 'bandPage'}}" class="clearfix inner">
+      <span class="name">{{name}}</span>
+    </a>
+    {{#if isOwner}}
+    <span class="buttons">
+      <a href="#" class="delete">Delete</a>
+    </span>
+    {{/if}}
+  </li>
+</template>
