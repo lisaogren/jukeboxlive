@@ -166,7 +166,17 @@ header ul.menu li {
 .event-form .list input {
 	display: none;
 }
-
+.event-form .list label {
+	display: block;
+	width: 100%;
+	height: 100%;
+	padding: 10px;
+	cursor: pointer;
+}
+#main .event-form ul.list li {
+	padding: 0;
+	cursor: default;
+}
 
 /* Helper classes */
 
@@ -182,7 +192,7 @@ header ul.menu li {
 .block {
 	margin-bottom: 20px;
 }
-.block label {
+.block label.input {
 	display: block;
 	float: left;
 	text-align: right;
