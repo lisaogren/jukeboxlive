@@ -14,7 +14,7 @@ Template.songSelectItem.events({
         var newState = $el.attr("checked") == "checked" ? false : true;
         $el.attr("checked", newState);
 
-        console.log((newState ? "Selected" : "Unselected") + " song '" + this.title + "'");
+        // console.log((newState ? "Selected" : "Unselected") + " song '" + this.title + "'");
 
         // Change classes on the li element to display the checkbox status
         $el.parent()[newState ? "addClass" : "removeClass"]("selected");

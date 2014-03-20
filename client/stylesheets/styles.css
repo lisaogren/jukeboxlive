@@ -5,7 +5,7 @@ html, body {
 	height: 100%;
 	margin: 0;
 	padding: 0;
-	font-family: Oregano, serif;
+	font-family: Arial, sans-serif;
 	font-size: 20px;
 }
 
@@ -25,6 +25,7 @@ a:hover, a:focus {
 header {
 	border-bottom: #aaa solid 1px;
 	margin-bottom: 20px;
+	font-family: Oregano;
 }
 
 header > .inner {
@@ -48,6 +49,8 @@ header ul.menu {
 	margin: 10px 0 0 0;
 	padding: 0;
 	float: left;
+	font-family: Arial, sans-serif;
+	font-size: 0.8em;
 }
 header ul.menu li {
 	float: left;
@@ -96,11 +99,13 @@ header ul.menu li {
 #main h3 {
 	margin-top: 0;
 	margin-bottom: 10px;
+	font-family: Oregano;
 }
 #main h3 .buttons {
 	float: right;
 	font-size: 0.7em;
 	margin-top: 10px;
+	font-family: Arial, sans-serif;
 }
 
 #main ul.list {
@@ -177,6 +182,12 @@ header ul.menu li {
 	padding: 0;
 	cursor: default;
 }
+#main .event-form ul.list li.error {
+	padding: 10px;
+	cursor: default;
+}
+
+
 
 /* Helper classes */
 
@@ -197,7 +208,7 @@ header ul.menu li {
 	float: left;
 	text-align: right;
 	margin-right: 20px;
-	font-size: 1.2em;
+	font-size: 1.1em;
 	width: 150px;
 	padding: 5px;
 	position: relative;
@@ -216,6 +227,7 @@ div.title {
 	padding: 0 10px;
 	font-size: 1.7em;
 	box-sizing: border-box;
+	font-family: Oregano;
 }
 div.title span.description {
 	font-size: 0.6em;
@@ -242,8 +254,7 @@ div.title span.description {
 /* General form styles */
 
 form input, form textarea {
-	font-family: Oregano, serif;
-	font-size: 1.2em;
+	font-size: 1.1em;
 	outline: none;
 	padding: 5px;
 }
