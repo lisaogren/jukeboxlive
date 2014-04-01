@@ -2,23 +2,18 @@
   "meteor": {},
   "dependencies": {
     "basePackages": {
-      "iron-router": {},
       "iron-router-progress": {},
       "moment": {},
       "spin": {},
       "jqueryui": {},
-      "underscore-string-latest": {}
+      "underscore-string-latest": {},
+      "iron-router": {}
     },
     "packages": {
-      "iron-router": {
-        "git": "https://github.com/EventedMind/iron-router.git",
-        "tag": "v0.6.4",
-        "commit": "927bbaed1b87894fb6fb70807f74ff3a5bd89f29"
-      },
       "iron-router-progress": {
         "git": "https://github.com/Multiply/iron-router-progress.git",
-        "tag": "v0.2.0",
-        "commit": "ce730d1d26feadb7c75ea25f22c5bfdb0c549a8b"
+        "tag": "v0.3.1",
+        "commit": "3f7900feb4bb70a1289b39a1fdcd1f438c0335b3"
       },
       "moment": {
         "git": "https://github.com/acreeger/meteor-moment.git",
@@ -32,18 +27,28 @@
       },
       "jqueryui": {
         "git": "https://github.com/mizzao/meteor-jqueryui.git",
-        "tag": "v1.10.3r2",
-        "commit": "d54f75cfad37ff8ce6ef9ad49de55738ba921af7"
+        "tag": "v1.10.4",
+        "commit": "c75906fc9e1e19abf1ad5b2963925122ff8a0336"
       },
       "underscore-string-latest": {
         "git": "https://github.com/TimHeckel/meteor-underscore-string.git",
         "tag": "v2.3.3",
         "commit": "4a5d70eee48fbd90a6e6fc78747250d704a0b3bb"
       },
+      "iron-router": {
+        "git": "https://github.com/EventedMind/iron-router.git",
+        "tag": "v0.7.0",
+        "commit": "05f34bc48c4cad9fdaa366c1ddcabe6980232ece"
+      },
       "build-fetcher": {
         "git": "https://github.com/mizzao/meteor-build-fetcher.git",
         "tag": "v0.1.0",
         "commit": "e3813b1fc7f5c576e8e1fa4c51ae6f4687780a35"
+      },
+      "blaze-layout": {
+        "git": "https://github.com/EventedMind/blaze-layout.git",
+        "tag": "v0.2.2",
+        "commit": "8bc53798fe5965669ae67c72f91829fcfdceabfd"
       }
     }
   }
