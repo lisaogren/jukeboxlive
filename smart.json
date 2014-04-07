@@ -5,6 +5,8 @@
     "spin": {},
     "jqueryui": {},
     "underscore-string-latest": {},
-    "iron-router": {}
+    "iron-router": {},
+    "gravatar": {},
+    "font-awesome": {}
   }
 }
